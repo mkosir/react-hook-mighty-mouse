@@ -1,6 +1,6 @@
-# react-hook-mighty-mouse
+# react-hook-mighty-mouse ![Mighty Mouse](mighty-mouse.png)
 
-_React hook that tracks mouse events relative to selected element._ ![Mighty Mouse](mighty-mouse.png)
+_React hook that tracks mouse events relative to selected element._
 
 ## Install
 
