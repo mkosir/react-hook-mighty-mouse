@@ -31,7 +31,7 @@ const CursorOnSelectedElement = () => {
       </div>
       <div className="buttons">
         <ul>
-          {true && (
+          {buttons.left && (
             <li>
               <b>Left</b> 🐭 button pressed on 🧀
             </li>
