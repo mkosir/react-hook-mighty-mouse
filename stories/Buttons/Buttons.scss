@@ -1,0 +1,15 @@
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  transition: all 2.5s ease;
+
+  ul {
+    font-size: 0.8em;
+    padding-left: 0;
+    list-style: none;
+    min-width: 200px;
+  }
+}

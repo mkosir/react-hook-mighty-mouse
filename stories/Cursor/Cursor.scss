@@ -1,0 +1,16 @@
+.cursor {
+  .cheese {
+    cursor: none;
+    width: 200px;
+
+    &:hover + #cursor {
+      display: block;
+    }
+  }
+
+  #cursor {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+  }
+}

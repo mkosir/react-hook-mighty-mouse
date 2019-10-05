@@ -13,7 +13,7 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
-    "lint": "eslint --max-warnings 0 --ext .js,jsx,ts,tsx src/ test/",
+    "lint": "eslint --max-warnings 0 --ext .js,jsx,ts,tsx src/",
     "lint-prettier": "prettier --config .prettierrc -l  src/**/*.ts{,x}",
     "prettier": "prettier --config .prettierrc --write src/**/*.ts{,x}",
     "storybook": "start-storybook -p 9009 -s public --quiet",
