@@ -87,7 +87,9 @@
     "react",
     "hook",
     "mighty",
+    "mighty-mouse",
     "mouse",
+    "mouse-tracking",
     "coordinates",
     "location",
     "angle"

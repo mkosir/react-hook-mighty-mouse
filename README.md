@@ -18,9 +18,9 @@ _React hook that tracks mouse events on selected element._
 ## Features
 
 - Zero dependencies
-- Track mouse position
-- Track mouse buttons
-- Track mouse events only on selected element [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--parallax-effect-glare-scale)
+- Track mouse positions - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
+- Track mouse buttons [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-buttons)
+- Track mouse events only on selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--selected-element)
 
 ## Example
 
@@ -45,7 +45,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 > ▶︎ indicates the default value if there's one
 
 ```js
-useMightyMouse(elementId?: string): Mouse;
+useMightyMouse(elementId?: string): Mouse
 ```
 
 _Input_  
