@@ -6,6 +6,8 @@
 
 _React hook that tracks mouse events on selected element._
 
+![](demo.gif)
+
 ## Demo
 
 **[Live demo](https://mkosir.github.io/react-hook-mighty-mouse)**
@@ -17,10 +19,10 @@ _React hook that tracks mouse events on selected element._
 
 ## Features
 
-- Zero dependencies
+- Lightweight, zero dependencies 📦
 - Track mouse positions - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
 - Track mouse buttons [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-buttons)
-- Track mouse events only on selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--selected-element)
+- Track mouse events only on selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--cursor-on-selected-element)
 
 ## Example
 
