@@ -6,6 +6,7 @@ import Positions from './Positions/_StorybookTabs';
 import SelectedElement from './SelectedElement/_StorybookTabs';
 import Buttons from './Buttons/_StorybookTabs';
 import Cursor from './Cursor/_StorybookTabs';
+import CursorOnSelectedElement from './CursorOnSelectedElement/_StorybookTabs';
 import './ReactHookMightyMouse.scss';
 
 const stories = storiesOf('React Hook Mighty Mouse', module);
@@ -15,4 +16,5 @@ stories
   .add('Positions', () => <Positions />)
   .add('Selected Element', () => <SelectedElement />)
   .add('Mouse Buttons', () => <Buttons />)
-  .add('Cursor', () => <Cursor />);
+  .add('Cursor', () => <Cursor />)
+  .add('Cursor On Selected Element', () => <CursorOnSelectedElement />);
