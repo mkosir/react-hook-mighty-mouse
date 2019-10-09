@@ -1,6 +1,6 @@
 {
   "name": "react-hook-mighty-mouse",
-  "version": "1.0.2",
+  "version": "1.2.14",
   "description": "React mouse hook",
   "main": "./dist/react-hook-mighty-mouse.umd.js",
   "module": "./dist/react-hook-mighty-mouse.es5.js",
@@ -90,6 +90,7 @@
     "mighty-mouse",
     "mouse",
     "mouse-tracking",
+    "relative",
     "coordinates",
     "location",
     "angle"

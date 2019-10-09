@@ -4,9 +4,14 @@ export type Mouse = {
     screen: { x: number | null; y: number | null };
     page: { x: number | null; y: number | null };
   };
+  positionRelative: {
+    x: number | null;
+    y: number | null;
+  };
   buttons: {
     left: boolean | null;
     middle: boolean | null;
     right: boolean | null;
   };
+  isHover: boolean;
 };

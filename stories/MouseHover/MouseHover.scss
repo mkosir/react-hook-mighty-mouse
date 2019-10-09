@@ -1,0 +1,28 @@
+.mouse-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 300px;
+  }
+
+  .display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 23px;
+    margin-top: 40px;
+
+    .row {
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: rgb(236, 189, 59);
+    }
+  }
+}

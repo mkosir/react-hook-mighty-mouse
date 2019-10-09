@@ -20,7 +20,7 @@ const CursorOnSelectedElement = () => {
       <div id="cursor" style={{ left: client.x, top: client.y }}>
         🐭
       </div>
-      <div className="default">
+      <div className="display">
         Mouse position
         <div className="row">
           x:<div>{client.x}</div>
@@ -75,7 +75,7 @@ const scss = `.cursor-on-selected-element {
     pointer-events: none;
   }
 
-  .default {
+  .display {
     display: flex;
     flex-direction: column;
     justify-content: center;

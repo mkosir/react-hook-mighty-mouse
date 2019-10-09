@@ -1,4 +1,4 @@
-# react-hook-mighty-mouse ![Mighty Mouse](mighty-mouse.png)
+# React Mighty Mouse ![Mighty Mouse](mighty-mouse.png)
 
 [![npm version][npm-badge]][npm-url]
 [![npm bundle size][size-badge]][npm-url]
@@ -20,9 +20,11 @@ _React hook that tracks mouse events on selected element._
 ## Features
 
 - Lightweight, zero dependencies 📦
-- Track mouse positions - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
-- Track mouse buttons [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-buttons)
+- Mouse positions - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
+- Mouse relative position to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
+- Track mouse button events [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-buttons)
 - Track mouse events only on selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--cursor-on-selected-element)
+- Track when mouse is over selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-hover)
 
 ## Example
 
@@ -50,22 +52,24 @@ ReactDOM.render(<App />, document.getElementById('root'));
 useMightyMouse(elementId?: string): Mouse
 ```
 
-_Input_  
+<u>_Input_</u>  
 **elementId**: _string_ ▶︎ `window (object)`  
 Selected element id.
 
-_Output_  
+<u>_Output_</u>  
 _**Mouse** = {  
-&nbsp;&nbsp;**position**: {  
-&nbsp;&nbsp;&nbsp;&nbsp;**client**: { x: number | null; y: number | null };  
-&nbsp;&nbsp;&nbsp;&nbsp; **screen**: { x: number | null; y: number | null };  
-&nbsp;&nbsp;&nbsp;&nbsp;**page**: { x: number | null; y: number | null };  
+&nbsp;&nbsp;**position** : {  
+&nbsp;&nbsp;&nbsp;&nbsp;**client** : { x: number | null; y: number | null };  
+&nbsp;&nbsp;&nbsp;&nbsp; **screen** : { x: number | null; y: number | null };  
+&nbsp;&nbsp;&nbsp;&nbsp;**page** : { x: number | null; y: number | null };  
 &nbsp;&nbsp;};  
-&nbsp;&nbsp;**buttons**: {  
-&nbsp;&nbsp;&nbsp;&nbsp;**left**: boolean | null;  
-&nbsp;&nbsp;&nbsp;&nbsp;**middle**: boolean | null;  
-&nbsp;&nbsp;&nbsp;&nbsp;**right**: boolean | null;  
+&nbsp;&nbsp;**positionRelative** : { x: number | null; y: number | null };  
+&nbsp;&nbsp;**buttons** : {  
+&nbsp;&nbsp;&nbsp;&nbsp;**left** : boolean | null;  
+&nbsp;&nbsp;&nbsp;&nbsp;**middle** : boolean | null;  
+&nbsp;&nbsp;&nbsp;&nbsp;**right** : boolean | null;  
 &nbsp;&nbsp;};  
+&nbsp;&nbsp;**isHover** : boolean;  
 }_
 
 ## Development
@@ -106,7 +110,6 @@ All contributions are welcome!
 
 - Add mouse angle 0-360° (relative to selected element)
 - Add throttle parameter (hook "updating")
-- Add tests
 
 [npm-url]: https://www.npmjs.com/package/react-hook-mighty-mouse
 [npm-badge]: https://img.shields.io/npm/v/react-hook-mighty-mouse.svg

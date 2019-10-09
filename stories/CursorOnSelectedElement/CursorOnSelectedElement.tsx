@@ -15,7 +15,7 @@ const CursorOnSelectedElement = () => {
       <div id="cursor" style={{ left: client.x, top: client.y }}>
         🐭
       </div>
-      <div className="default">
+      <div className="display">
         Mouse position
         <div className="row">
           x:<div>{client.x}</div>
