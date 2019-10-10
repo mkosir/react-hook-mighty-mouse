@@ -62,7 +62,7 @@ Selected element id.
 _**Mouse** = {  
 &nbsp;&nbsp;**position** : {  
 &nbsp;&nbsp;&nbsp;&nbsp;**client** : { x: number | null; y: number | null };  
-&nbsp;&nbsp;&nbsp;&nbsp; **screen** : { x: number | null; y: number | null };  
+&nbsp;&nbsp;&nbsp;&nbsp;**screen** : { x: number | null; y: number | null };  
 &nbsp;&nbsp;&nbsp;&nbsp;**page** : { x: number | null; y: number | null };  
 &nbsp;&nbsp;};  
 &nbsp;&nbsp;**positionRelative** : { x: number | null; y: number | null };  
