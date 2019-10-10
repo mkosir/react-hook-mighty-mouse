@@ -52,11 +52,13 @@ ReactDOM.render(<App />, document.getElementById('root'));
 useMightyMouse(elementId?: string): Mouse
 ```
 
-<u>_Input_</u>  
+### _Input Params_
+
 **elementId**: _string_ ▶︎ `window (object)`  
 Selected element id.
 
-<u>_Output_</u>  
+### _Return values_
+
 _**Mouse** = {  
 &nbsp;&nbsp;**position** : {  
 &nbsp;&nbsp;&nbsp;&nbsp;**client** : { x: number | null; y: number | null };  
