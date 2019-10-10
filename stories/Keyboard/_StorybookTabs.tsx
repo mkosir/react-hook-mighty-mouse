@@ -1,31 +1,31 @@
 import React from 'react';
 
 import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './Buttons';
+import Demo from './Keyboard';
 
 const jsx = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Buttons.scss';
+import './Keyboard.scss';
 
-const Buttons = () => {
-  const { buttons } = useMightyMouse();
+const Keyboard = () => {
+  const { keyboard } = useMightyMouse();
 
   return (
-    <div className="buttons">
-      <div className="header">Pressed mouse buttons 🖱️</div>
+    <div className="keyboard">
+      <div className="header">Pressed keys ⌨️</div>
       <div className="keys">
-        <div className="key">{buttons.left ? <b>Left 👇</b> : 'Left'}</div>
-        <div className="key">{buttons.middle ? <b>Middle 👇</b> : 'Middle'}</div>
-        <div className="key">{buttons.right ? <b>Right 👇</b> : 'Right'}</div>
+        <div className="key">{keyboard.ctrl ? <b>Ctrl 👇</b> : 'Ctrl'}</div>
+        <div className="key">{keyboard.shift ? <b>Shift 👇</b> : 'Shift'}</div>
+        <div className="key">{keyboard.alt ? <b>Alt 👇</b> : 'Alt'}</div>
       </div>
     </div>
   );
 };
 
-export default Buttons;`;
+export default Keyboard;`;
 
-const scss = `.buttons {
+const scss = `.keyboard {
   display: flex;
   flex-direction: column;
   justify-content: center;

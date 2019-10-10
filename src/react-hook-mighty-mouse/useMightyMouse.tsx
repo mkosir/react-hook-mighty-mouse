@@ -16,6 +16,11 @@ const initMouse: Mouse = {
     middle: null,
     right: null,
   },
+  keyboard: {
+    ctrl: null,
+    shift: null,
+    alt: null,
+  },
   isHover: false,
 };
 
@@ -37,7 +42,8 @@ const useMightyMouse = (elementId?: string): Mouse => {
       positionRelative.y = clientY - clientRect.top;
     }
 
-    setMouse({
+    setMouse(prevState => ({
+      ...prevState,
       position: {
         client: { x: clientX, y: clientY },
         screen: { x: screenX, y: screenY },
@@ -50,7 +56,19 @@ const useMightyMouse = (elementId?: string): Mouse => {
         middle: [4, 5, 6, 7].indexOf(buttons) > -1,
       },
       isHover: true,
-    });
+    }));
+  };
+
+  const onKeyEvent = (event: Event): void => {
+    const { ctrlKey, shiftKey, altKey } = event as MouseEvent;
+    setMouse(prevState => ({
+      ...prevState,
+      keyboard: {
+        ctrl: ctrlKey,
+        shift: shiftKey,
+        alt: altKey,
+      },
+    }));
   };
 
   const onMouseLeave = (): void => {
@@ -69,12 +87,16 @@ const useMightyMouse = (elementId?: string): Mouse => {
     element.addEventListener('mousemove', onMouseEvent);
     element.addEventListener('mouseup', onMouseEvent);
     element.addEventListener('mouseleave', onMouseLeave);
+    element.addEventListener('keydown', onKeyEvent);
+    element.addEventListener('keyup', onKeyEvent);
 
     return (): void => {
       element!.removeEventListener('mousedown', onMouseEvent);
       element!.removeEventListener('mousemove', onMouseEvent);
       element!.removeEventListener('mouseup', onMouseEvent);
       element!.removeEventListener('mouseleave', onMouseLeave);
+      element!.removeEventListener('keydown', onKeyEvent);
+      element!.removeEventListener('keyup', onKeyEvent);
     };
   }, []);
   return mouse;

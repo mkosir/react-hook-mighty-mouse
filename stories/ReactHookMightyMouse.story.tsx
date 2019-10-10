@@ -9,6 +9,7 @@ import Buttons from './Buttons/_StorybookTabs';
 import MouseHover from './MouseHover/_StorybookTabs';
 import Cursor from './Cursor/_StorybookTabs';
 import CursorOnSelectedElement from './CursorOnSelectedElement/_StorybookTabs';
+import Keyboard from './Keyboard/_StorybookTabs';
 import './ReactHookMightyMouse.scss';
 
 const stories = storiesOf('React Mighty Mouse', module);
@@ -21,4 +22,5 @@ stories
   .add('Mouse Buttons', () => <Buttons />)
   .add('Mouse Hover', () => <MouseHover />)
   .add('Cursor', () => <Cursor />)
-  .add('Cursor On Selected Element', () => <CursorOnSelectedElement />);
+  .add('Cursor On Selected Element', () => <CursorOnSelectedElement />)
+  .add('Keyboard', () => <Keyboard />);

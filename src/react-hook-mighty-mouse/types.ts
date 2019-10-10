@@ -32,6 +32,14 @@ export type Mouse = {
     right: boolean | null;
   };
   /*
+   * Pressed keys
+   */
+  keyboard: {
+    ctrl: boolean | null;
+    shift: boolean | null;
+    alt: boolean | null;
+  };
+  /*
    * Mouse over selected element
    */
   isHover: boolean;

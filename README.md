@@ -20,11 +20,12 @@ _React hook that tracks mouse events on selected element._
 ## Features
 
 - Lightweight, zero dependencies 📦
-- Mouse positions - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
+- Mouse positions 🖱️ - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
 - Mouse relative position to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--relative-position)
 - Track mouse button events [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-buttons)
 - Track mouse events only on selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--cursor-on-selected-element)
-- Track when mouse is over selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-hover)
+- Detect when mouse is over selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-hover)
+- Detect keys pressed on the keyboard ⌨️ [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--keyboard)
 
 ## Example
 
@@ -46,11 +47,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 ## Hook
 
-> ▶︎ indicates the default value if there's one
-
 ```js
 useMightyMouse(elementId?: string): Mouse
 ```
+
+> ▶︎ indicates the default value if there's one
 
 ### _Input Params_
 
@@ -61,17 +62,22 @@ Selected element id.
 
 _**Mouse** = {  
 &nbsp;&nbsp;**position** : {  
-&nbsp;&nbsp;&nbsp;&nbsp;**client** : { x: number | null; y: number | null };  
-&nbsp;&nbsp;&nbsp;&nbsp;**screen** : { x: number | null; y: number | null };  
-&nbsp;&nbsp;&nbsp;&nbsp;**page** : { x: number | null; y: number | null };  
-&nbsp;&nbsp;};  
-&nbsp;&nbsp;**positionRelative** : { x: number | null; y: number | null };  
+&nbsp;&nbsp;&nbsp;&nbsp;**client** : { **x** : number | null, **y** : number | null },  
+&nbsp;&nbsp;&nbsp;&nbsp;**screen** : { **x** : number | null; **y** : number | null },  
+&nbsp;&nbsp;&nbsp;&nbsp;**page** : { **x** : number | null; **y** : number | null },  
+&nbsp;&nbsp;},  
+&nbsp;&nbsp;**positionRelative** : { **x** : number | null; **y** : number | null },  
 &nbsp;&nbsp;**buttons** : {  
-&nbsp;&nbsp;&nbsp;&nbsp;**left** : boolean | null;  
-&nbsp;&nbsp;&nbsp;&nbsp;**middle** : boolean | null;  
-&nbsp;&nbsp;&nbsp;&nbsp;**right** : boolean | null;  
-&nbsp;&nbsp;};  
-&nbsp;&nbsp;**isHover** : boolean;  
+&nbsp;&nbsp;&nbsp;&nbsp;**left** : boolean | null,  
+&nbsp;&nbsp;&nbsp;&nbsp;**middle** : boolean | null,  
+&nbsp;&nbsp;&nbsp;&nbsp;**right** : boolean | null,  
+&nbsp;&nbsp;},  
+&nbsp;&nbsp;**keyboard** : {  
+&nbsp;&nbsp;&nbsp;&nbsp;**ctrl** : boolean | null,  
+&nbsp;&nbsp;&nbsp;&nbsp;**shift** : boolean | null,  
+&nbsp;&nbsp;&nbsp;&nbsp;**alt** : boolean | null,  
+&nbsp;&nbsp;},  
+&nbsp;&nbsp;**isHover** : boolean  
 }_
 
 ## Development

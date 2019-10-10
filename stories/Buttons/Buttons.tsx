@@ -8,24 +8,12 @@ const Buttons = () => {
 
   return (
     <div className="buttons">
-      Press mouse button
-      <ul>
-        {buttons.left && (
-          <li>
-            <b>Left</b> button pressed
-          </li>
-        )}
-        {buttons.middle && (
-          <li>
-            <b>Middle</b> button pressed
-          </li>
-        )}
-        {buttons.right && (
-          <li>
-            <b>Right</b> button pressed
-          </li>
-        )}
-      </ul>
+      <div className="header">Pressed mouse buttons 🖱️</div>
+      <div className="keys">
+        <div className="key">{buttons.left ? <b>Left 👇</b> : 'Left'}</div>
+        <div className="key">{buttons.middle ? <b>Middle 👇</b> : 'Middle'}</div>
+        <div className="key">{buttons.right ? <b>Right 👇</b> : 'Right'}</div>
+      </div>
     </div>
   );
 };
