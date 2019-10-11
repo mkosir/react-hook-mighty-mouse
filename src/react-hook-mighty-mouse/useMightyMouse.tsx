@@ -24,7 +24,7 @@ const initMouse: Mouse = {
   isHover: false,
 };
 
-const useMightyMouse = (touchEnabled: boolean = true, elementId?: string): Mouse => {
+const useMightyMouse = (touchEnabled: boolean = true, elementId: string | null = null): Mouse => {
   const [mouse, setMouse] = useState<Mouse>(initMouse);
   let selectedEl: HTMLElement | null = null;
 

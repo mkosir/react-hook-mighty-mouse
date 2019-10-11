@@ -48,7 +48,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ## Hook
 
 ```js
-useMightyMouse(touchEnabled: boolean = true, elementId?: string): Mouse
+useMightyMouse(touchEnabled: boolean = true,  elementId: string | null = null): Mouse
 ```
 
 > ▶︎ indicates the default value if there's one
@@ -58,7 +58,7 @@ useMightyMouse(touchEnabled: boolean = true, elementId?: string): Mouse
 **touchEnabled**: _boolean_ ▶︎ `true`  
 Boolean to enable/disable touch.
 
-**elementId**: _string_ ▶︎ `window (object)`  
+**elementId**: _string | null_ ▶︎ `null`  
 Selected element id.
 
 ### _Return values_
