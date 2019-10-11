@@ -20,12 +20,12 @@ _React hook that tracks mouse events on selected element._
 ## Features
 
 - Lightweight, zero dependencies 📦
-- Supports mouse and touch events
+- Supports **mouse** and **touch** events
 - Mouse positions 🖱️ - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--positions)
-- Mouse relative position to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--relative-position)
-- Track mouse button events [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-buttons)
-- Detect when mouse is over selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-over-selected-element)
-- Detect keys pressed on the keyboard ⌨️ [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--keyboard)
+- Mouse **relative position** to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--relative-position)
+- Track mouse **button** events [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-buttons)
+- Detect when mouse is **hovering** over selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-over-selected-element)
+- Detect keys pressed on the **keyboard** ⌨️ [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--keyboard)
 
 ## Example
 
