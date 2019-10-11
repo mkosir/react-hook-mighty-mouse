@@ -1,31 +1,23 @@
 import React from 'react';
 
 import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './RelativePosition';
+import Demo from './RelativePositionImage';
 
 const jsx = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePosition.scss';
+import './RelativePositionImage.scss';
+import imgCheese from './img/cheese.png';
 
-const RelativePosition = () => {
+const RelativePositionImage = () => {
   const {
-    position: { client },
     positionRelative: { x, y },
-  } = useMightyMouse(true, 'trackElement');
+  } = useMightyMouse(true, 'cheese');
   return (
-    <div className="relative-position" id="trackElement">
-      <div className="position">
-        <div className="header">Position</div>
-        <div className="row">
-          x: <div>{client.x}</div>
-        </div>
-        <div className="row">
-          y: <div>{client.y}</div>
-        </div>
-      </div>
-      <div className="position">
-        <div className="header">Relative Position</div>
+    <div className="relative-position-image">
+      <img src={imgCheese} id="cheese" alt="pic" />
+      <div className="display">
+        <div className="header">Mouse relative position on 🧀</div>
         <div className="row">
           x: <div>{x && x.toFixed(0)}</div>
         </div>
@@ -37,30 +29,31 @@ const RelativePosition = () => {
   );
 };
 
-export default RelativePosition;`;
+export default RelativePositionImage;`;
 
-const scss = `.relative-position {
+const scss = `.relative-position-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 20px;
 
-  .position {
+  img {
+    width: 300px;
+  }
+
+  .display {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
-    &:nth-child(2) {
-      margin-top: 20px;
-    }
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 21px;
+    margin-top: 40px;
 
     .header {
       font-size: 1em;
-      text-decoration: underline;
     }
 
     .row {
@@ -70,7 +63,7 @@ const scss = `.relative-position {
       align-items: center;
       font-size: 0.8em;
       margin-top: 10px;
-      min-width: 60px;
+      min-width: 50px;
     }
   }
 }`;

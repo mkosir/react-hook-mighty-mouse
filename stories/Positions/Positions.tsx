@@ -9,7 +9,7 @@ const Positions = () => {
   } = useMightyMouse();
   return (
     <div className="positions">
-      Mouse position
+      Mouse positions
       <div className="position">
         <div>Client (browser rendered content)</div>
         <div className="row">

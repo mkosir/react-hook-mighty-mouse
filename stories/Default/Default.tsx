@@ -11,7 +11,7 @@ const Default = () => {
     <div className="default">
       Mouse position
       <div className="row">
-        x:<div>{client.x}</div>
+        x: <div>{client.x}</div>
       </div>
       <div className="row">
         y: <div>{client.y}</div>

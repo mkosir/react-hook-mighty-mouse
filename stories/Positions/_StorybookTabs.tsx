@@ -8,17 +8,15 @@ const jsx = `import React from 'react';
 import useMightyMouse from '../../src';
 import './Positions.scss';
 
-const Default = () => {
+const Positions = () => {
   const {
     position: { client, page, screen },
   } = useMightyMouse();
   return (
     <div className="positions">
-      Mouse position
+      Mouse positions
       <div className="position">
-        <div>
-          <u>Client (browser rendered content)</u>
-        </div>
+        <div>Client (browser rendered content)</div>
         <div className="row">
           x:<div>{client.x}</div>
         </div>
@@ -27,7 +25,7 @@ const Default = () => {
         </div>
       </div>
       <div className="position">
-        <u>Page (viewport)</u>
+        Page (viewport)
         <div className="row">
           x:<div>{page.x}</div>
         </div>
@@ -36,7 +34,7 @@ const Default = () => {
         </div>
       </div>
       <div className="position">
-        <u>Screen (monitor)</u>
+        Screen (monitor)
         <div className="row">
           x:<div>{screen.x}</div>
         </div>
@@ -48,7 +46,7 @@ const Default = () => {
   );
 };
 
-export default Default;`;
+export default Positions;`;
 
 const scss = `.positions {
   display: flex;
@@ -57,9 +55,9 @@ const scss = `.positions {
   align-items: center;
   border: 2px solid black;
   border-radius: 8px;
-  padding: 10px;
-  font-size: 22px;
-  width: 400px;
+  padding: 20px 10px;
+  font-size: 23px;
+  width: 350px;
 
   .position {
     display: flex;
@@ -67,17 +65,16 @@ const scss = `.positions {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    font-size: 0.75em;
+    font-size: 0.7em;
 
     .row {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.7em;
+      font-size: 0.75em;
       margin-top: 10px;
-      max-width: 80px;
-      width: 200px;
+      width: 40px;
     }
   }
 }`;

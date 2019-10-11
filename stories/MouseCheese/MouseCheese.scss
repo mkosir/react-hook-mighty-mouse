@@ -1,0 +1,120 @@
+.mouse-cheese {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+
+  img {
+    cursor: none;
+    width: 250px;
+
+    &:hover + #cursor {
+      display: block;
+    }
+  }
+
+  #cursor {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+  }
+
+  .positions1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    width: 180px;
+    margin-top: 30px;
+
+    .position {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      &:nth-child(2) {
+        margin-top: 10px;
+      }
+
+      .header {
+        font-size: 1em;
+        text-decoration: underline;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85em;
+        margin-top: 5px;
+        min-width: 60px;
+      }
+    }
+  }
+
+  .mouse-hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 5px;
+
+    .header {
+      font-size: 1em;
+      text-decoration: underline;
+    }
+    .row {
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: rgb(236, 189, 59);
+      line-height: 20px;
+    }
+  }
+
+  .main-row-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      border-radius: 8px;
+      padding: 5px;
+      margin: 0px 5px;
+      min-width: 210px;
+
+      .header {
+        font-size: 1em;
+        text-decoration: underline;
+      }
+
+      .keys {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5px;
+
+        .key {
+          font-size: 0.85em;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

@@ -42,7 +42,7 @@ const scss = `.mouse-hover {
     border: 2px solid black;
     border-radius: 8px;
     padding: 10px;
-    font-size: 23px;
+    font-size: 21px;
     margin-top: 40px;
 
     .row {

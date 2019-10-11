@@ -3,21 +3,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
 
-  img {
-    width: 400px;
-  }
-
-  .display {
+  .position {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
-    border-radius: 8px;
-    padding: 10px;
     font-size: 23px;
-    margin-top: 40px;
+    &:nth-child(2) {
+      margin-top: 20px;
+    }
+
+    .header {
+      font-size: 1em;
+      text-decoration: underline;
+    }
 
     .row {
       display: flex;
@@ -26,7 +29,7 @@
       align-items: center;
       font-size: 0.8em;
       margin-top: 10px;
-      min-width: 50px;
+      min-width: 60px;
     }
   }
 }

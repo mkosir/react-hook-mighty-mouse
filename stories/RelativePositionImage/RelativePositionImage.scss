@@ -1,26 +1,26 @@
-.selected-element {
+.relative-position-image {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: rgb(231, 184, 96);
 
-  .position {
+  img {
+    width: 300px;
+  }
+
+  .display {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
-    &:nth-child(2) {
-      margin-top: 20px;
-    }
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 21px;
+    margin-top: 40px;
 
     .header {
       font-size: 1em;
-      text-decoration: underline;
     }
 
     .row {
@@ -30,7 +30,7 @@
       align-items: center;
       font-size: 0.8em;
       margin-top: 10px;
-      min-width: 60px;
+      min-width: 50px;
     }
   }
 }

@@ -2,17 +2,25 @@ import React from 'react';
 
 import useMightyMouse from '../../src';
 import './RelativePosition.scss';
-import imgCheese from './img/cheese.png';
 
 const RelativePosition = () => {
   const {
+    position: { client },
     positionRelative: { x, y },
-  } = useMightyMouse(true, 'cheese');
+  } = useMightyMouse(true, 'trackElement');
   return (
-    <div className="relative-position">
-      <img src={imgCheese} id="cheese" alt="pic" />
-      <div className="display">
-        Mouse relative position
+    <div className="relative-position" id="trackElement">
+      <div className="position">
+        <div className="header">Position</div>
+        <div className="row">
+          x: <div>{client.x}</div>
+        </div>
+        <div className="row">
+          y: <div>{client.y}</div>
+        </div>
+      </div>
+      <div className="position">
+        <div className="header">Relative Position</div>
         <div className="row">
           x: <div>{x && x.toFixed(0)}</div>
         </div>
