@@ -44,3 +44,5 @@ export type Mouse = {
    */
   isHover: boolean;
 };
+
+export type EventType = 'mousemove' | 'touchmove' | 'mousedown' | 'mouseup';

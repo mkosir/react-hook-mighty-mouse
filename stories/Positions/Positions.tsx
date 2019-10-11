@@ -11,9 +11,7 @@ const Positions = () => {
     <div className="positions">
       Mouse position
       <div className="position">
-        <div>
-          <u>Client (browser rendered content)</u>
-        </div>
+        <div>Client (browser rendered content)</div>
         <div className="row">
           x:<div>{client.x}</div>
         </div>
@@ -22,7 +20,7 @@ const Positions = () => {
         </div>
       </div>
       <div className="position">
-        <u>Page (viewport)</u>
+        Page (viewport)
         <div className="row">
           x:<div>{page.x}</div>
         </div>
@@ -31,7 +29,7 @@ const Positions = () => {
         </div>
       </div>
       <div className="position">
-        <u>Screen (monitor)</u>
+        Screen (monitor)
         <div className="row">
           x:<div>{screen.x}</div>
         </div>

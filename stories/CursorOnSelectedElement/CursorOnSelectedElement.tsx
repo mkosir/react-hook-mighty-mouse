@@ -8,7 +8,7 @@ const CursorOnSelectedElement = () => {
   const {
     position: { client },
     buttons,
-  } = useMightyMouse('trackElement');
+  } = useMightyMouse(true, 'trackElement');
   return (
     <div className="cursor-on-selected-element">
       <img src={imgCheese} id="trackElement" className="cheese" alt="pic" />
@@ -28,17 +28,17 @@ const CursorOnSelectedElement = () => {
         <ul>
           {buttons.left && (
             <li>
-              <b>Left</b> 🐭 button pressed on 🧀
+              <b>Left</b> 🐭 button pressed
             </li>
           )}
           {buttons.middle && (
             <li>
-              <b>Middle</b> 🐭 button pressed on 🧀
+              <b>Middle</b> 🐭 button pressed
             </li>
           )}
           {buttons.right && (
             <li>
-              <b>Right</b> 🐭 button pressed on 🧀
+              <b>Right</b> 🐭 button pressed
             </li>
           )}
         </ul>

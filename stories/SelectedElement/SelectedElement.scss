@@ -5,16 +5,32 @@
   align-items: center;
   border: 2px solid black;
   border-radius: 8px;
-  padding: 10px;
-  font-size: 23px;
+  padding: 20px;
+  background-color: rgb(231, 184, 96);
 
-  .row {
+  .position {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-size: 0.8em;
-    margin-top: 10px;
-    min-width: 50px;
+    font-size: 23px;
+    &:nth-child(2) {
+      margin-top: 20px;
+    }
+
+    .header {
+      font-size: 1em;
+      text-decoration: underline;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8em;
+      margin-top: 10px;
+      min-width: 60px;
+    }
   }
 }

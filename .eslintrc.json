@@ -11,6 +11,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "prefer-const": 0,
     "@typescript-eslint/interface-name-prefix": 0,
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/no-inferrable-types": 0,

@@ -20,6 +20,7 @@ _React hook that tracks mouse events on selected element._
 ## Features
 
 - Lightweight, zero dependencies 📦
+- Supports mouse and touch events
 - Mouse positions 🖱️ - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--positions)
 - Mouse relative position to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--relative-position)
 - Track mouse button events [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-buttons)
@@ -48,12 +49,15 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ## Hook
 
 ```js
-useMightyMouse(elementId?: string): Mouse
+useMightyMouse(touchEnabled: boolean = true, elementId?: string): Mouse
 ```
 
 > ▶︎ indicates the default value if there's one
 
 ### _Input Params_
+
+**touchEnabled**: _boolean_ ▶︎ `true`  
+Boolean to enable/disable touch.
 
 **elementId**: _string_ ▶︎ `window (object)`  
 Selected element id.

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Mouse } from './types';
+import { Mouse, EventType } from './types';
 
 const initMouse: Mouse = {
   position: {
@@ -24,20 +24,58 @@ const initMouse: Mouse = {
   isHover: false,
 };
 
-const useMightyMouse = (elementId?: string): Mouse => {
+const useMightyMouse = (touchEnabled: boolean = true, elementId?: string): Mouse => {
   const [mouse, setMouse] = useState<Mouse>(initMouse);
-  let element: Window | HTMLElement | null = null;
+  let selectedEl: HTMLElement | null = null;
 
-  const onMouseEvent = (event: Event): void => {
-    const { clientX, clientY, screenX, screenY, pageX, pageY, buttons } = event as MouseEvent;
+  const onMouseTouchEvent = (event: Event): void => {
+    let clientX: number;
+    let clientY: number;
+    let screenX: number;
+    let screenY: number;
+    let pageX: number;
+    let pageY: number;
+    let buttons: {
+      left: boolean | null;
+      middle: boolean | null;
+      right: boolean | null;
+    } = { left: null, middle: null, right: null };
+
+    switch (event.type as EventType) {
+      case 'mousemove':
+      case 'mousedown':
+      case 'mouseup':
+        const mouseEvent = event as MouseEvent;
+        clientX = mouseEvent.clientX;
+        clientY = mouseEvent.clientY;
+        screenX = mouseEvent.screenX;
+        screenY = mouseEvent.screenY;
+        pageX = mouseEvent.pageX;
+        pageY = mouseEvent.pageY;
+        buttons.left = [1, 3, 5, 7].indexOf(mouseEvent.buttons) > -1;
+        buttons.right = [2, 3, 6, 7].indexOf(mouseEvent.buttons) > -1;
+        buttons.middle = [4, 5, 6, 7].indexOf(mouseEvent.buttons) > -1;
+        break;
+      case 'touchmove':
+        const { touches } = event as TouchEvent;
+        const touchEvent = touches[0];
+        clientX = touchEvent.clientX;
+        clientY = touchEvent.clientY;
+        screenX = touchEvent.screenX;
+        screenY = touchEvent.screenY;
+        pageX = touchEvent.pageX;
+        pageY = touchEvent.pageY;
+        break;
+      default:
+        throw new Error(`Unknown event triggered "${event.type}"`);
+    }
 
     const positionRelative: { x: number | null; y: number | null } = {
       x: null,
       y: null,
     };
-    if (elementId) {
-      // @ts-ignore
-      const clientRect = element!.getBoundingClientRect();
+    if (selectedEl) {
+      const clientRect = selectedEl.getBoundingClientRect();
       positionRelative.x = clientX - clientRect.left;
       positionRelative.y = clientY - clientRect.top;
     }
@@ -50,12 +88,25 @@ const useMightyMouse = (elementId?: string): Mouse => {
         page: { x: pageX, y: pageY },
       },
       positionRelative,
-      buttons: {
-        left: [1, 3, 5, 7].indexOf(buttons) > -1,
-        right: [2, 3, 6, 7].indexOf(buttons) > -1,
-        middle: [4, 5, 6, 7].indexOf(buttons) > -1,
-      },
+      buttons,
+    }));
+  };
+
+  const onLeave = (): void => {
+    setMouse(initMouse);
+  };
+
+  const onSelectedElementEnter = (): void => {
+    setMouse(prevState => ({
+      ...prevState,
       isHover: true,
+    }));
+  };
+
+  const onSelectedElementLeave = (): void => {
+    setMouse(prevState => ({
+      ...prevState,
+      isHover: false,
     }));
   };
 
@@ -71,32 +122,37 @@ const useMightyMouse = (elementId?: string): Mouse => {
     }));
   };
 
-  const onMouseLeave = (): void => {
-    setMouse(initMouse);
-  };
-
   useEffect(() => {
-    element = window;
     if (elementId) {
-      element = document.getElementById(elementId);
-      if (!element) {
+      selectedEl = document.getElementById(elementId);
+      if (!selectedEl) {
         throw new Error(`Element with id="${elementId}" doesn't exists`);
       }
+      selectedEl.addEventListener('mouseenter', onSelectedElementEnter);
+      selectedEl.addEventListener('mouseleave', onSelectedElementLeave);
     }
-    element.addEventListener('mousedown', onMouseEvent);
-    element.addEventListener('mousemove', onMouseEvent);
-    element.addEventListener('mouseup', onMouseEvent);
-    element.addEventListener('mouseleave', onMouseLeave);
-    element.addEventListener('keydown', onKeyEvent);
-    element.addEventListener('keyup', onKeyEvent);
+    document.addEventListener('mousemove', onMouseTouchEvent);
+    document.addEventListener('mousedown', onMouseTouchEvent);
+    document.addEventListener('mouseup', onMouseTouchEvent);
+    document.addEventListener('mouseleave', onLeave);
+    document.addEventListener('keydown', onKeyEvent);
+    document.addEventListener('keyup', onKeyEvent);
+    if (touchEnabled) {
+      window.addEventListener('touchmove', onMouseTouchEvent);
+      window.addEventListener('touchend', onLeave);
+    }
 
     return (): void => {
-      element!.removeEventListener('mousedown', onMouseEvent);
-      element!.removeEventListener('mousemove', onMouseEvent);
-      element!.removeEventListener('mouseup', onMouseEvent);
-      element!.removeEventListener('mouseleave', onMouseLeave);
-      element!.removeEventListener('keydown', onKeyEvent);
-      element!.removeEventListener('keyup', onKeyEvent);
+      document.removeEventListener('mousemove', onMouseTouchEvent);
+      document.removeEventListener('mousedown', onMouseTouchEvent);
+      document.removeEventListener('mouseup', onMouseTouchEvent);
+      document.removeEventListener('mouseleave', onLeave);
+      document.removeEventListener('keydown', onKeyEvent);
+      document.removeEventListener('keyup', onKeyEvent);
+      if (touchEnabled) {
+        window.removeEventListener('touchmove', onMouseTouchEvent);
+        window.removeEventListener('touchend', onLeave);
+      }
     };
   }, []);
   return mouse;

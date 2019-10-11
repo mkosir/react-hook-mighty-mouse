@@ -17,10 +17,10 @@ const stories = storiesOf('React Mighty Mouse', module);
 stories
   .add('Default', () => <Default />)
   .add('Positions', () => <Positions />)
-  .add('Relative Position', () => <RelativePosition />)
-  .add('Selected Element', () => <SelectedElement />)
+  .add('Relative Position', () => <SelectedElement />)
+  .add('Relative Position - Cheese', () => <RelativePosition />)
   .add('Mouse Buttons', () => <Buttons />)
-  .add('Mouse Hover', () => <MouseHover />)
+  .add('Mouse Over Selected Element', () => <MouseHover />)
   .add('Cursor', () => <Cursor />)
-  .add('Cursor On Selected Element', () => <CursorOnSelectedElement />)
-  .add('Keyboard', () => <Keyboard />);
+  .add('Keyboard', () => <Keyboard />)
+  .add('Mouse & Cheese', () => <CursorOnSelectedElement />);
