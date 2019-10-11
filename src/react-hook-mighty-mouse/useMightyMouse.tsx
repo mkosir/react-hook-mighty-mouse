@@ -10,6 +10,7 @@ const initMouse: Mouse = {
   positionRelative: {
     x: null,
     y: null,
+    angle: null,
   },
   buttons: {
     left: null,
@@ -70,14 +71,19 @@ const useMightyMouse = (touchEnabled: boolean = true, elementId: string | null =
         throw new Error(`Unknown event triggered "${event.type}"`);
     }
 
-    const positionRelative: { x: number | null; y: number | null } = {
+    const positionRelative: { x: number | null; y: number | null; angle: number | null } = {
       x: null,
       y: null,
+      angle: null,
     };
     if (selectedEl) {
       const clientRect = selectedEl.getBoundingClientRect();
       positionRelative.x = clientX - clientRect.left;
       positionRelative.y = clientY - clientRect.top;
+      const rad2Deg = 180 / Math.PI;
+      const angleOffset = 180;
+      positionRelative.angle =
+        Math.atan2(positionRelative.y, -positionRelative.x) * rad2Deg + angleOffset;
     }
 
     setMouse(prevState => ({

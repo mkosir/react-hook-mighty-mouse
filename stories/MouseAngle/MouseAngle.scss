@@ -1,0 +1,38 @@
+.mouse-angle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+
+  .title {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+  }
+
+  .angle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 170px;
+
+    .header {
+      font-size: 1em;
+      text-decoration: underline;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9em;
+      margin-top: 10px;
+      min-width: 60px;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import Default from './Default/_StorybookTabs';
 import Positions from './Positions/_StorybookTabs';
 import RelativePosition from './RelativePosition/_StorybookTabs';
 import RelativePositionImage from './RelativePositionImage/_StorybookTabs';
+import MouseAngle from './MouseAngle/_StorybookTabs';
 import Buttons from './Buttons/_StorybookTabs';
 import MouseHover from './MouseHover/_StorybookTabs';
 import Cursor from './Cursor/_StorybookTabs';
@@ -19,6 +20,7 @@ stories
   .add('Positions', () => <Positions />)
   .add('Relative Position', () => <RelativePosition />)
   .add('Relative Position - Image', () => <RelativePositionImage />)
+  .add('Mouse Angle', () => <MouseAngle />)
   .add('Mouse Buttons', () => <Buttons />)
   .add('Mouse Over Selected Element', () => <MouseHover />)
   .add('Cursor', () => <Cursor />)

@@ -7,7 +7,7 @@ import imgCheese from './img/cheese.png';
 const MouseCheese = () => {
   const {
     position: { client },
-    positionRelative: { x, y },
+    positionRelative: { x, y, angle },
     isHover,
     buttons,
     keyboard,
@@ -18,7 +18,7 @@ const MouseCheese = () => {
       <div id="cursor" style={{ left: client.x, top: client.y }}>
         🐭
       </div>
-      <div className="positions1">
+      <div className="pos">
         <div className="position">
           <div className="header">Position</div>
           <div className="row">
@@ -36,6 +36,7 @@ const MouseCheese = () => {
           <div className="row">
             y: <div>{y && y.toFixed(0)}</div>
           </div>
+          <div className="row">angle: {angle && <div>{angle.toFixed(0)}°</div>}</div>
         </div>
       </div>
       <div className="mouse-hover">

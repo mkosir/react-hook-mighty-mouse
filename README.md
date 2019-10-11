@@ -23,6 +23,7 @@ _React hook that tracks mouse events on selected element._
 - Supports **mouse** and **touch** events
 - Mouse positions 🖱️ - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--positions)
 - Mouse **relative position** to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--relative-position)
+- Mouse **angle** 0-360° 📐 relative to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-angle)
 - Track mouse **button** events [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-buttons)
 - Detect when mouse is **hovering** over selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-hook-mighty-mouse--mouse-over-selected-element)
 - Detect keys pressed on the **keyboard** ⌨️ [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--keyboard)
@@ -69,7 +70,7 @@ _**Mouse** = {
 &nbsp;&nbsp;&nbsp;&nbsp;**screen** : { **x** : number | null; **y** : number | null },  
 &nbsp;&nbsp;&nbsp;&nbsp;**page** : { **x** : number | null; **y** : number | null },  
 &nbsp;&nbsp;},  
-&nbsp;&nbsp;**positionRelative** : { **x** : number | null; **y** : number | null },  
+&nbsp;&nbsp;**positionRelative** : { **x** : number | null; **y** : number | null, **angle** : number | null },  
 &nbsp;&nbsp;**buttons** : {  
 &nbsp;&nbsp;&nbsp;&nbsp;**left** : boolean | null,  
 &nbsp;&nbsp;&nbsp;&nbsp;**middle** : boolean | null,  
@@ -119,7 +120,6 @@ All contributions are welcome!
 
 ## Roadmap
 
-- Add mouse angle 0-360° (relative to selected element)
 - Add throttle parameter (hook "updating")
 
 [npm-url]: https://www.npmjs.com/package/react-hook-mighty-mouse

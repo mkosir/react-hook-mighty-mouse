@@ -22,6 +22,7 @@ export type Mouse = {
   positionRelative: {
     x: number | null;
     y: number | null;
+    angle: number | null;
   };
   /*
    * Mouse buttons

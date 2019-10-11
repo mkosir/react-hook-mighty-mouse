@@ -20,7 +20,7 @@
     pointer-events: none;
   }
 
-  .positions1 {
+  .pos {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,7 +74,7 @@
     }
     .row {
       font-size: 0.9em;
-      margin-top: 10px;
+      margin-top: 4px;
       color: rgb(236, 189, 59);
       line-height: 20px;
     }
