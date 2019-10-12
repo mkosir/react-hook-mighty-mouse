@@ -11,10 +11,10 @@ const Default = () => {
     <div className="default">
       Mouse position
       <div className="row">
-        x: <div>{client.x}</div>
+        x: <div>{client.x && client.x.toFixed(0)}</div>
       </div>
       <div className="row">
-        y: <div>{client.y}</div>
+        y: <div>{client.y && client.y.toFixed(0)}</div>
       </div>
     </div>
   );
