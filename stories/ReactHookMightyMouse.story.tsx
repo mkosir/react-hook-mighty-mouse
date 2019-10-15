@@ -11,6 +11,7 @@ import MouseHover from './MouseHover/_StorybookTabs';
 import Cursor from './Cursor/_StorybookTabs';
 import Keyboard from './Keyboard/_StorybookTabs';
 import MouseCheese from './MouseCheese/_StorybookTabs';
+import EyesFollow from './EyesFollow/_StorybookTabs';
 import './ReactHookMightyMouse.scss';
 
 const stories = storiesOf('React Mighty Mouse', module);
@@ -25,4 +26,5 @@ stories
   .add('Mouse Over Selected Element', () => <MouseHover />)
   .add('Cursor', () => <Cursor />)
   .add('Keyboard', () => <Keyboard />)
-  .add('Mouse & Cheese', () => <MouseCheese />);
+  .add('Mouse & Cheese', () => <MouseCheese />)
+  .add('Eyes Follow', () => <EyesFollow />);

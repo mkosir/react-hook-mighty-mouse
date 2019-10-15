@@ -25,7 +25,11 @@ const initMouse: Mouse = {
   isHover: false,
 };
 
-const useMightyMouse = (touchEnabled: boolean = true, elementId: string | null = null): Mouse => {
+const useMightyMouse = (
+  touchEnabled: boolean = true,
+  selectedElementId: string | null = null,
+  selectedElementOffset: { x: number; y: number } = { x: 0, y: 0 },
+): Mouse => {
   const [mouse, setMouse] = useState<Mouse>(initMouse);
   let selectedEl: HTMLElement | null = null;
 
@@ -78,8 +82,8 @@ const useMightyMouse = (touchEnabled: boolean = true, elementId: string | null =
     };
     if (selectedEl) {
       const clientRect = selectedEl.getBoundingClientRect();
-      positionRelative.x = clientX - clientRect.left;
-      positionRelative.y = clientY - clientRect.top;
+      positionRelative.x = clientX - clientRect.left - selectedElementOffset.x;
+      positionRelative.y = clientY - clientRect.top - selectedElementOffset.y;
       const rad2Deg = 180 / Math.PI;
       const angleOffset = 180;
       positionRelative.angle =
@@ -129,10 +133,10 @@ const useMightyMouse = (touchEnabled: boolean = true, elementId: string | null =
   };
 
   useEffect(() => {
-    if (elementId) {
-      selectedEl = document.getElementById(elementId);
+    if (selectedElementId) {
+      selectedEl = document.getElementById(selectedElementId);
       if (!selectedEl) {
-        throw new Error(`Element with id="${elementId}" doesn't exists`);
+        throw new Error(`Element with id="${selectedElementId}" doesn't exists`);
       }
       selectedEl.addEventListener('mouseenter', onSelectedElementEnter);
       selectedEl.addEventListener('mouseleave', onSelectedElementLeave);

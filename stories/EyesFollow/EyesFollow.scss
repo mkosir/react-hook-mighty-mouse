@@ -1,0 +1,32 @@
+.eyes-follow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+
+  .eyes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .eye {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      background: #f3efef;
+
+      .pupil {
+        background: #382e25;
+        border-radius: 50%;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 25px;
+        top: 12px;
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@ _React hook that tracks mouse events on selected element._
 - Supports **mouse** and **touch** events
 - Mouse positions 🖱️ - client/page/screen [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--positions)
 - Mouse **relative position** to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--relative-position)
-- Mouse **angle** 0-360° 📐 relative to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-angle)
+- Mouse **angle** 0-360° 📐 relative to selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-angle) - Eyes Follow 👀 [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--eyes-follow)
 - Track mouse **button** events [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-buttons)
 - Detect when mouse is **hovering** over selected element [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--mouse-over-selected-element)
 - Detect keys pressed on the **keyboard** ⌨️ [🔗demo](https://mkosir.github.io/react-hook-mighty-mouse/?path=/story/react-mighty-mouse--keyboard)
@@ -49,7 +49,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ## Hook
 
 ```js
-useMightyMouse(touchEnabled: boolean = true,  elementId: string | null = null): Mouse
+useMightyMouse(
+  touchEnabled: boolean = true,
+  selectedElementId: string | null = null,
+  selectedElementOffset: { x: number; y: number } = { x: 0, y: 0 }
+  ): Mouse
 ```
 
 > ▶︎ indicates the default value if there's one
@@ -59,8 +63,11 @@ useMightyMouse(touchEnabled: boolean = true,  elementId: string | null = null): 
 **touchEnabled**: _boolean_ ▶︎ `true`  
 Boolean to enable/disable touch.
 
-**elementId**: _string | null_ ▶︎ `null`  
+**selectedElementId**: _string | null_ ▶︎ `null`  
 Selected element id.
+
+**selectedElementOffset**: _{ x: number; y: number }_ ▶︎ `{ x: 0, y: 0 }`  
+Selected element offset object.
 
 ### _Return values_
 
