@@ -11,7 +11,7 @@ const MouseCheese = () => {
     isHover,
     buttons,
     keyboard,
-  } = useMightyMouse(true, 'cheese');
+  } = useMightyMouse(true, 'cheese', { x: 125, y: 70 });
   return (
     <div className="mouse-cheese">
       <img src={imgCheese} id="cheese" alt="pic" />
