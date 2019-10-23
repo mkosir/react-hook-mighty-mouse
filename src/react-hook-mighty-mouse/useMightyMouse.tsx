@@ -7,11 +7,6 @@ const initMouse: Mouse = {
     screen: { x: null, y: null },
     page: { x: null, y: null },
   },
-  positionRelative: {
-    x: null,
-    y: null,
-    angle: null,
-  },
   buttons: {
     left: null,
     middle: null,
@@ -22,7 +17,20 @@ const initMouse: Mouse = {
     shift: null,
     alt: null,
   },
-  isHover: false,
+  selectedElement: {
+    position: {
+      x: null,
+      y: null,
+      angle: null,
+    },
+    boundingRect: {
+      left: null,
+      top: null,
+      width: null,
+      height: null,
+    },
+    isHover: false,
+  },
 };
 
 const useMightyMouse = (
@@ -40,11 +48,7 @@ const useMightyMouse = (
     let screenY: number;
     let pageX: number;
     let pageY: number;
-    let buttons: {
-      left: boolean | null;
-      middle: boolean | null;
-      right: boolean | null;
-    } = { left: null, middle: null, right: null };
+    const buttons = { ...mouse.buttons };
 
     switch (event.type as EventType) {
       case 'mousemove':
@@ -75,19 +79,20 @@ const useMightyMouse = (
         throw new Error(`Unknown event triggered "${event.type}"`);
     }
 
-    const positionRelative: { x: number | null; y: number | null; angle: number | null } = {
-      x: null,
-      y: null,
-      angle: null,
-    };
+    const selectedElPosition = { ...mouse.selectedElement.position };
+    const selectedElBoundingRect = { ...mouse.selectedElement.boundingRect };
     if (selectedEl) {
-      const clientRect = selectedEl.getBoundingClientRect();
-      positionRelative.x = clientX - clientRect.left - selectedElementOffset.x;
-      positionRelative.y = clientY - clientRect.top - selectedElementOffset.y;
+      const { left, top, width, height } = selectedEl.getBoundingClientRect();
+      selectedElPosition.x = clientX - left - selectedElementOffset.x;
+      selectedElPosition.y = clientY - top - selectedElementOffset.y;
       const rad2Deg = 180 / Math.PI;
       const angleOffset = 180;
-      positionRelative.angle =
-        Math.atan2(positionRelative.y, -positionRelative.x) * rad2Deg + angleOffset;
+      selectedElPosition.angle =
+        Math.atan2(selectedElPosition.y, -selectedElPosition.x) * rad2Deg + angleOffset;
+      selectedElBoundingRect.left = left;
+      selectedElBoundingRect.top = top;
+      selectedElBoundingRect.width = width;
+      selectedElBoundingRect.height = height;
     }
 
     setMouse(prevState => ({
@@ -97,8 +102,12 @@ const useMightyMouse = (
         screen: { x: screenX, y: screenY },
         page: { x: pageX, y: pageY },
       },
-      positionRelative,
       buttons,
+      selectedElement: {
+        ...prevState.selectedElement,
+        position: selectedElPosition,
+        boundingRect: selectedElBoundingRect,
+      },
     }));
   };
 
@@ -107,16 +116,20 @@ const useMightyMouse = (
   };
 
   const onSelectedElementEnter = (): void => {
+    const selectedElement = { ...mouse.selectedElement };
+    selectedElement.isHover = true;
     setMouse(prevState => ({
       ...prevState,
-      isHover: true,
+      selectedElement,
     }));
   };
 
   const onSelectedElementLeave = (): void => {
+    const selectedElement = { ...mouse.selectedElement };
+    selectedElement.isHover = false;
     setMouse(prevState => ({
       ...prevState,
-      isHover: false,
+      selectedElement,
     }));
   };
 

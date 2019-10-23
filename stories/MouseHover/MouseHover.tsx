@@ -5,7 +5,9 @@ import './MouseHover.scss';
 import imgCheese from './img/cheese.png';
 
 const MouseHover = () => {
-  const { isHover } = useMightyMouse(true, 'cheese');
+  const {
+    selectedElement: { isHover },
+  } = useMightyMouse(true, 'cheese');
   return (
     <div className="mouse-hover">
       <img src={imgCheese} id="cheese" alt="pic" />

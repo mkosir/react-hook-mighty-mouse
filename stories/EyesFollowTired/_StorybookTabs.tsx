@@ -11,10 +11,14 @@ import './EyesFollowTired.scss';
 const EyesFollowTired = () => {
   const [tiredness, setTiredness] = useState(0);
   const {
-    positionRelative: { angle: angleLeftEye },
+    selectedElement: {
+      position: { angle: angleLeftEye },
+    },
   } = useMightyMouse(true, 'left-eye', { x: 45, y: 45 });
   const {
-    positionRelative: { angle: angleRightEye },
+    selectedElement: {
+      position: { angle: angleRightEye },
+    },
   } = useMightyMouse(true, 'right-eye', { x: 45, y: 45 });
 
   const redEye =

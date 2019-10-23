@@ -77,7 +77,6 @@ _**Mouse** = {
 &nbsp;&nbsp;&nbsp;&nbsp;**screen** : { **x** : number | null; **y** : number | null },  
 &nbsp;&nbsp;&nbsp;&nbsp;**page** : { **x** : number | null; **y** : number | null },  
 &nbsp;&nbsp;},  
-&nbsp;&nbsp;**positionRelative** : { **x** : number | null; **y** : number | null, **angle** : number | null },  
 &nbsp;&nbsp;**buttons** : {  
 &nbsp;&nbsp;&nbsp;&nbsp;**left** : boolean | null,  
 &nbsp;&nbsp;&nbsp;&nbsp;**middle** : boolean | null,  
@@ -88,7 +87,11 @@ _**Mouse** = {
 &nbsp;&nbsp;&nbsp;&nbsp;**shift** : boolean | null,  
 &nbsp;&nbsp;&nbsp;&nbsp;**alt** : boolean | null,  
 &nbsp;&nbsp;},  
-&nbsp;&nbsp;**isHover** : boolean  
+&nbsp;&nbsp;**selectedElement** : {  
+&nbsp;&nbsp;&nbsp;&nbsp;**position** : { **x** : number | null; **y** : number | null, **angle** : number | null },  
+&nbsp;&nbsp;&nbsp;&nbsp;**boundingRect** : { **left** : number | null; **top** : number | null, **width** : number | null, **height** : number | null },  
+&nbsp;&nbsp;&nbsp;&nbsp;**isHover** : boolean  
+&nbsp;&nbsp;},  
 }_
 
 ## Development

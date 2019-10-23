@@ -7,8 +7,10 @@ import imgCheese from './img/cheese.png';
 const MouseCheese = () => {
   const {
     position: { client },
-    positionRelative: { x, y, angle },
-    isHover,
+    selectedElement: {
+      position: { x, y, angle },
+      isHover,
+    },
     buttons,
     keyboard,
   } = useMightyMouse(true, 'cheese', { x: 125, y: 70 });

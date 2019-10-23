@@ -12,11 +12,13 @@ import imgCheese from './img/cheese.png';
 const MouseCheese = () => {
   const {
     position: { client },
-    positionRelative: { x, y, angle },
-    isHover,
+    selectedElement: {
+      position: { x, y, angle },
+      isHover,
+    },
     buttons,
     keyboard,
-  } = useMightyMouse(true, 'cheese');
+  } = useMightyMouse(true, 'cheese', { x: 125, y: 70 });
   return (
     <div className="mouse-cheese">
       <img src={imgCheese} id="cheese" alt="pic" />
@@ -27,10 +29,10 @@ const MouseCheese = () => {
         <div className="position">
           <div className="header">Position</div>
           <div className="row">
-            x: <div>{client.x}</div>
+            x: <div>{client.x && client.x.toFixed(0)}</div>
           </div>
           <div className="row">
-            y: <div>{client.y}</div>
+            y: <div>{client.y && client.y.toFixed(0)}</div>
           </div>
         </div>
         <div className="position">

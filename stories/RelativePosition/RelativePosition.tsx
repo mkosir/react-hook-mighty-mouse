@@ -6,7 +6,9 @@ import './RelativePosition.scss';
 const RelativePosition = () => {
   const {
     position: { client },
-    positionRelative: { x, y },
+    selectedElement: {
+      position: { x, y },
+    },
   } = useMightyMouse(true, 'trackElement');
   return (
     <div className="relative-position" id="trackElement">

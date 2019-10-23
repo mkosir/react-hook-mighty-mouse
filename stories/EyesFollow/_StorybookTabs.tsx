@@ -10,10 +10,14 @@ import './EyesFollow.scss';
 
 const EyesFollow = () => {
   const {
-    positionRelative: { angle: angleLeftEye },
+    selectedElement: {
+      position: { angle: angleLeftEye },
+    },
   } = useMightyMouse(true, 'left-eye', { x: 20, y: 20 });
   const {
-    positionRelative: { angle: angleRightEye },
+    selectedElement: {
+      position: { angle: angleRightEye },
+    },
   } = useMightyMouse(true, 'right-eye', { x: 20, y: 20 });
 
   const rotateLeftEye = \`rotate(\${-angleLeftEye}deg)\`;

@@ -11,7 +11,9 @@ import imgCheese from './img/cheese.png';
 
 const RelativePositionImage = () => {
   const {
-    positionRelative: { x, y },
+    selectedElement: {
+      position: { x, y },
+    },
   } = useMightyMouse(true, 'cheese');
   return (
     <div className="relative-position-image">

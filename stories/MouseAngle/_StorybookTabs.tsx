@@ -10,7 +10,9 @@ import './MouseAngle.scss';
 
 const MouseAngle = () => {
   const {
-    positionRelative: { angle },
+    selectedElement: {
+      position: { angle },
+    },
   } = useMightyMouse(true, 'trackElement');
   return (
     <div className="mouse-angle">
