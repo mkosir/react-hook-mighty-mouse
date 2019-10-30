@@ -87,7 +87,7 @@ _**Mouse** = {
 &nbsp;&nbsp;&nbsp;&nbsp;**shift** : boolean | null,  
 &nbsp;&nbsp;&nbsp;&nbsp;**alt** : boolean | null,  
 &nbsp;&nbsp;},  
-&nbsp;&nbsp;**eventType** : EventType | null,  
+&nbsp;&nbsp;**eventType** : string | null,  
 &nbsp;&nbsp;**selectedElement** : {  
 &nbsp;&nbsp;&nbsp;&nbsp;**position** : { **x** : number | null; **y** : number | null, **angle** : number | null },  
 &nbsp;&nbsp;&nbsp;&nbsp;**boundingRect** : { **left** : number | null; **top** : number | null, **width** : number | null, **height** : number | null },  

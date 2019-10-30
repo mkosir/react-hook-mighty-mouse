@@ -32,7 +32,7 @@ export type Mouse = {
     shift: boolean | null;
     alt: boolean | null;
   };
-  eventType: EventType | null;
+  eventType: string | null;
   selectedElement: SelectedElement;
 };
 
