@@ -5,6 +5,7 @@ compiled
 
 .rpt2_cache
 
+.DS_Store
 *.log
 .vscode
 .idea
