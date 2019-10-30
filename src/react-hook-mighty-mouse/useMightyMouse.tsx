@@ -67,6 +67,7 @@ const useMightyMouse = (
         buttons.middle = [4, 5, 6, 7].indexOf(mouseEvent.buttons) > -1;
         break;
       case 'touchmove':
+      case 'touchstart':
         const { touches } = event as TouchEvent;
         const touchEvent = touches[0];
         clientX = touchEvent.clientX;
@@ -164,6 +165,7 @@ const useMightyMouse = (
     document.addEventListener('keyup', onKeyEvent);
     if (touchEnabled) {
       window.addEventListener('touchmove', onMouseTouchEvent);
+      window.addEventListener('touchstart', onMouseTouchEvent);
       window.addEventListener('touchend', onLeave);
     }
 
@@ -176,6 +178,7 @@ const useMightyMouse = (
       document.removeEventListener('keyup', onKeyEvent);
       if (touchEnabled) {
         window.removeEventListener('touchmove', onMouseTouchEvent);
+        window.removeEventListener('touchstart', onMouseTouchEvent);
         window.removeEventListener('touchend', onLeave);
       }
     };

@@ -60,4 +60,4 @@ type SelectedElement = {
   isHover: boolean;
 };
 
-export type EventType = 'mousemove' | 'touchmove' | 'mousedown' | 'mouseup';
+export type EventType = 'mousemove' | 'mousedown' | 'mouseup' | 'touchmove' | 'touchstart';
