@@ -1,23 +1,18 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import useMightyMouse from '../../src';
 import './Flashlight.scss';
 import imgFlashlight from './img/flashlight.png';
 
 const Flashlight = () => {
-  let toggleFlashlight = useRef(true);
-
   const {
     position: {
       page: { x, y },
     },
-    eventType,
   } = useMightyMouse();
-  if (eventType === 'mousedown') {
-    toggleFlashlight.current = !toggleFlashlight.current;
-  }
+
   const style = {
-    backgroundImage: toggleFlashlight.current ? `url(${imgFlashlight})` : null,
+    backgroundImage: x && y ? `url(${imgFlashlight})` : null,
     backgroundPositionX: x - 200,
     backgroundPositionY: y - 350,
   };
