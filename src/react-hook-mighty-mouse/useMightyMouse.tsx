@@ -17,6 +17,7 @@ const initMouse: Mouse = {
     shift: null,
     alt: null,
   },
+  eventType: null,
   selectedElement: {
     position: {
       x: null,
@@ -50,7 +51,8 @@ const useMightyMouse = (
     let pageY: number;
     const buttons = { ...mouse.buttons };
 
-    switch (event.type as EventType) {
+    const eventType = event.type as EventType;
+    switch (eventType) {
       case 'mousemove':
       case 'mousedown':
       case 'mouseup':
@@ -103,6 +105,7 @@ const useMightyMouse = (
         page: { x: pageX, y: pageY },
       },
       buttons,
+      eventType: eventType,
       selectedElement: {
         ...prevState.selectedElement,
         position: selectedElPosition,
