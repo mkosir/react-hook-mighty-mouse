@@ -13,6 +13,7 @@ import Keyboard from './Keyboard/_StorybookTabs';
 import MouseCheese from './MouseCheese/_StorybookTabs';
 import EyesFollow from './EyesFollow/_StorybookTabs';
 import EyesFollowTired from './EyesFollowTired/_StorybookTabs';
+import Flashlight from './Flashlight/_StorybookTabs';
 import './ReactHookMightyMouse.scss';
 
 const stories = storiesOf('React Mighty Mouse', module);
@@ -29,4 +30,5 @@ stories
   .add('Keyboard', () => <Keyboard />)
   .add('Mouse & Cheese', () => <MouseCheese />)
   .add('Eyes Follow', () => <EyesFollow />)
-  .add('Eyes Follow - Tired', () => <EyesFollowTired />);
+  .add('Eyes Follow - Tired', () => <EyesFollowTired />)
+  .add('Flashlight', () => <Flashlight />);

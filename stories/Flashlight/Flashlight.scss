@@ -1,0 +1,25 @@
+.flashlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-family: helvetica neue, helvetica, verdana, arial;
+  pointer-events: none;
+  width: 100vw;
+  height: 80vh;
+  background-color: #000000;
+  background-repeat: no-repeat;
+
+  .quote {
+    width: 80vw;
+    line-height: 140%;
+  }
+
+  .author {
+    width: 80vw;
+    line-height: 140%;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+}
