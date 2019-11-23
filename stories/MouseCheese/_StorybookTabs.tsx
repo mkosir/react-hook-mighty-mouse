@@ -14,11 +14,13 @@ const MouseCheese = () => {
     position: { client },
     selectedElement: {
       position: { x, y, angle },
+      boundingRect,
       isHover,
     },
     buttons,
     keyboard,
   } = useMightyMouse(true, 'cheese', { x: 125, y: 70 });
+
   return (
     <div className="mouse-cheese">
       <img src={imgCheese} id="cheese" alt="pic" />
@@ -46,25 +48,52 @@ const MouseCheese = () => {
           <div className="row">angle: {angle && <div>{angle.toFixed(0)}°</div>}</div>
         </div>
       </div>
+      <div className="size">
+        <div className="header">Cheese</div>
+        <div className="columns">
+          <div className="col-size-1">
+            <div className="row">
+              Width: <div>{boundingRect.width && boundingRect.width.toFixed(0)}</div>
+            </div>
+            <div className="row">
+              Height: <div>{boundingRect.height && boundingRect.height.toFixed(0)}</div>
+            </div>
+          </div>
+          <div className="col-size-2">
+            <div className="row">
+              Left: <div>{boundingRect.left && boundingRect.left.toFixed(0)}</div>
+            </div>
+            <div className="row">
+              Top: <div>{boundingRect.top && boundingRect.top.toFixed(0)}</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="mouse-hover">
         <div className="header">Hovering Over Cheese</div>
         <div className="row">{isHover ? <b>Yes 🧀</b> : 'No'}</div>
       </div>
       <div className="main-row-2">
         <div className="col">
-          <div className="header">Pressed mouse buttons 🖱️</div>
-          <div className="keys">
-            <div className="key">{buttons.left ? <b>Left 👇</b> : 'Left'}</div>
-            <div className="key">{buttons.middle ? <b>Middle 👇</b> : 'Middle'}</div>
-            <div className="key">{buttons.right ? <b>Right 👇</b> : 'Right'}</div>
+          <div className="header">Mouse buttons 🖱️</div>
+          <div className="buttons">
+            <div className="btn-row1">
+              <div>{buttons.left ? <b>Left 👇</b> : 'Left'}</div>
+              <div>{buttons.middle ? <b>Middle 👇</b> : 'Middle'}</div>
+              <div>{buttons.right ? <b>Right 👇</b> : 'Right'}</div>
+            </div>
+            <div className="btn-row2">
+              <div>{buttons.wheelDown ? <b>Wheel Down 👇</b> : 'Wheel Down'}</div>
+              <div>{buttons.wheelUp ? <b>Wheel Up 👆</b> : 'Wheel Up'}</div>
+            </div>
           </div>
         </div>
         <div className="col">
           <div className="header">Pressed keys ⌨️</div>
           <div className="keys">
-            <div className="key">{keyboard.ctrl ? <b>Ctrl 👇</b> : 'Ctrl'}</div>
-            <div className="key">{keyboard.shift ? <b>Shift 👇</b> : 'Shift'}</div>
-            <div className="key">{keyboard.alt ? <b>Alt 👇</b> : 'Alt'}</div>
+            <div>{keyboard.ctrl ? <b>Ctrl 👇</b> : 'Ctrl'}</div>
+            <div>{keyboard.shift ? <b>Shift 👇</b> : 'Shift'}</div>
+            <div>{keyboard.alt ? <b>Alt 👇</b> : 'Alt'}</div>
           </div>
         </div>
       </div>
@@ -134,6 +163,65 @@ const scss = `.mouse-cheese {
     }
   }
 
+  .size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    width: 180px;
+    margin-top: 5px;
+
+    .header {
+      font-size: 1em;
+      text-decoration: underline;
+    }
+
+    .columns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .col-size-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.85em;
+          margin-top: 5px;
+          min-width: 78px;
+        }
+      }
+
+      .col-size-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.85em;
+          margin-top: 5px;
+          min-width: 60px;
+        }
+      }
+    }
+  }
+
   .mouse-hover {
     display: flex;
     flex-direction: column;
@@ -179,17 +267,32 @@ const scss = `.mouse-cheese {
         text-decoration: underline;
       }
 
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5px;
+        font-size: 0.85em;
+        line-height: 20px;
+        padding-left: 20px;
+
+        .btn-row1 {
+          min-width: 80px;
+        }
+        .btn-row2 {
+          min-width: 120px;
+        }
+      }
+
       .keys {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         margin-top: 5px;
-
-        .key {
-          font-size: 0.85em;
-          line-height: 20px;
-        }
+        font-size: 0.85em;
+        line-height: 20px;
       }
     }
   }

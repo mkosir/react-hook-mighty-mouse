@@ -13,6 +13,8 @@ const Buttons = () => {
         <div className="key">{buttons.left ? <b>Left 👇</b> : 'Left'}</div>
         <div className="key">{buttons.middle ? <b>Middle 👇</b> : 'Middle'}</div>
         <div className="key">{buttons.right ? <b>Right 👇</b> : 'Right'}</div>
+        <div className="key">{buttons.wheelDown ? <b>Wheel Down 👇</b> : 'Wheel Down'}</div>
+        <div className="key">{buttons.wheelUp ? <b>Wheel Up 👆</b> : 'Wheel Up'}</div>
       </div>
     </div>
   );
