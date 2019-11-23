@@ -58,6 +58,65 @@
     }
   }
 
+  .size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    width: 180px;
+    margin-top: 5px;
+
+    .header {
+      font-size: 1em;
+      text-decoration: underline;
+    }
+
+    .columns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .col-size-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.85em;
+          margin-top: 5px;
+          min-width: 78px;
+        }
+      }
+
+      .col-size-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.85em;
+          margin-top: 5px;
+          min-width: 60px;
+        }
+      }
+    }
+  }
+
   .mouse-hover {
     display: flex;
     flex-direction: column;
@@ -103,17 +162,32 @@
         text-decoration: underline;
       }
 
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5px;
+        font-size: 0.85em;
+        line-height: 20px;
+        padding-left: 20px;
+
+        .btn-row1 {
+          min-width: 80px;
+        }
+        .btn-row2 {
+          min-width: 120px;
+        }
+      }
+
       .keys {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         margin-top: 5px;
-
-        .key {
-          font-size: 0.85em;
-          line-height: 20px;
-        }
+        font-size: 0.85em;
+        line-height: 20px;
       }
     }
   }
