@@ -1,6 +1,6 @@
 {
   "name": "react-hook-mighty-mouse",
-  "version": "1.4.25",
+  "version": "1.4.26",
   "description": "React mouse hook",
   "main": "./dist/react-hook-mighty-mouse.umd.js",
   "module": "./dist/react-hook-mighty-mouse.es5.js",
