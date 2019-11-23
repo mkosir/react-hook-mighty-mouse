@@ -23,6 +23,8 @@ export type Mouse = {
     left: boolean | null;
     middle: boolean | null;
     right: boolean | null;
+    wheelDown: boolean | null;
+    wheelUp: boolean | null;
   };
   /*
    * Pressed keys
@@ -60,4 +62,10 @@ type SelectedElement = {
   isHover: boolean;
 };
 
-export type EventType = 'mousemove' | 'mousedown' | 'mouseup' | 'touchmove' | 'touchstart';
+export type EventType =
+  | 'mousemove'
+  | 'mousedown'
+  | 'mouseup'
+  | 'touchmove'
+  | 'touchstart'
+  | 'wheel';

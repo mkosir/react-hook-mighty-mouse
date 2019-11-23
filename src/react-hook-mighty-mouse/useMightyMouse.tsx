@@ -11,6 +11,8 @@ const initMouse: Mouse = {
     left: null,
     middle: null,
     right: null,
+    wheelDown: null,
+    wheelUp: null,
   },
   keyboard: {
     ctrl: null,
@@ -55,6 +57,7 @@ const useMightyMouse = (
       case 'mousemove':
       case 'mousedown':
       case 'mouseup':
+      case 'wheel':
         const mouseEvent = event as MouseEvent;
         clientX = mouseEvent.clientX;
         clientY = mouseEvent.clientY;
@@ -65,6 +68,8 @@ const useMightyMouse = (
         buttons.left = [1, 3, 5, 7].indexOf(mouseEvent.buttons) > -1;
         buttons.right = [2, 3, 6, 7].indexOf(mouseEvent.buttons) > -1;
         buttons.middle = [4, 5, 6, 7].indexOf(mouseEvent.buttons) > -1;
+        buttons.wheelDown = (event as WheelEvent).deltaY > 0;
+        buttons.wheelUp = (event as WheelEvent).deltaY < 0;
         break;
       case 'touchmove':
       case 'touchstart':
@@ -160,6 +165,7 @@ const useMightyMouse = (
     document.addEventListener('mousemove', onMouseTouchEvent);
     document.addEventListener('mousedown', onMouseTouchEvent);
     document.addEventListener('mouseup', onMouseTouchEvent);
+    document.addEventListener('wheel', onMouseTouchEvent);
     document.addEventListener('mouseleave', onLeave);
     document.addEventListener('keydown', onKeyEvent);
     document.addEventListener('keyup', onKeyEvent);
@@ -173,6 +179,7 @@ const useMightyMouse = (
       document.removeEventListener('mousemove', onMouseTouchEvent);
       document.removeEventListener('mousedown', onMouseTouchEvent);
       document.removeEventListener('mouseup', onMouseTouchEvent);
+      document.removeEventListener('wheel', onMouseTouchEvent);
       document.removeEventListener('mouseleave', onLeave);
       document.removeEventListener('keydown', onKeyEvent);
       document.removeEventListener('keyup', onKeyEvent);
