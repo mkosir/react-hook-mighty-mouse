@@ -1,13 +1,10 @@
 import { addParameters, addDecorator, configure } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import theme from './config-theme';
 
 addParameters({
   options: {
-    /**
-     * name to display in the top left corner
-     * @type {String}
-     */
-    name: 'React Mighty Mouse 🐭',
+    theme: theme,
     /**
      * display panel that shows addon configurations
      * @type {Boolean}
