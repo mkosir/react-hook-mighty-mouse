@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './EyesFollow';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './EyesFollow.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './EyesFollow.scss';
@@ -37,9 +37,10 @@ const EyesFollow = () => {
   );
 };
 
-export default EyesFollow;`;
+export default EyesFollow;
+`;
 
-const scss = `.eyes-follow {
+const style = `.eyes-follow {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,12 +71,13 @@ const scss = `.eyes-follow {
       }
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _EyesFollow = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _EyesFollow;

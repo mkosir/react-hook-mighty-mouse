@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './Keyboard';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './Keyboard.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './Keyboard.scss';
@@ -23,9 +23,10 @@ const Keyboard = () => {
   );
 };
 
-export default Keyboard;`;
+export default Keyboard;
+`;
 
-const scss = `.keyboard {
+const style = `.keyboard {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,12 +51,13 @@ const scss = `.keyboard {
       line-height: 10px;
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _Keyboard = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _Keyboard;

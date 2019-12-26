@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './EyesFollow.scss';
+import './EyesFollow.storytab.scss';
 
 const EyesFollow = () => {
   const {

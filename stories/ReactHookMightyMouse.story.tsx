@@ -1,19 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Default from './Default/_StorybookTabs';
-import Positions from './Positions/_StorybookTabs';
-import RelativePosition from './RelativePosition/_StorybookTabs';
-import RelativePositionImage from './RelativePositionImage/_StorybookTabs';
-import MouseAngle from './MouseAngle/_StorybookTabs';
-import Buttons from './Buttons/_StorybookTabs';
-import MouseHover from './MouseHover/_StorybookTabs';
-import Cursor from './Cursor/_StorybookTabs';
-import Keyboard from './Keyboard/_StorybookTabs';
-import MouseCheese from './MouseCheese/_StorybookTabs';
-import EyesFollow from './EyesFollow/_StorybookTabs';
-import EyesFollowTired from './EyesFollowTired/_StorybookTabs';
-import Flashlight from './Flashlight/_StorybookTabs';
+import Default from './Default/_Default';
+import Positions from './Positions/_Positions';
+import RelativePosition from './RelativePosition/_RelativePosition';
+import RelativePositionImage from './RelativePositionImage/_RelativePositionImage';
+import MouseAngle from './MouseAngle/_MouseAngle';
+import Buttons from './Buttons/_Buttons';
+import MouseHover from './MouseHover/_MouseHover';
+import Cursor from './Cursor/_Cursor';
+import Keyboard from './Keyboard/_Keyboard';
+import MouseCheese from './MouseCheese/_MouseCheese';
+import EyesFollow from './EyesFollow/_EyesFollow';
+import EyesFollowTired from './EyesFollowTired/_EyesFollowTired';
+import Flashlight from './Flashlight/_Flashlight';
 import './ReactHookMightyMouse.scss';
 
 const stories = storiesOf('React Mighty Mouse', module);

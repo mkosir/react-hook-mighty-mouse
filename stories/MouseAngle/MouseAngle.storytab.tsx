@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './MouseAngle.scss';
+import './MouseAngle.storytab.scss';
 
 const MouseAngle = () => {
   const {

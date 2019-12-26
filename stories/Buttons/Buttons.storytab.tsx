@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Buttons.scss';
+import './Buttons.storytab.scss';
 
 const Buttons = () => {
   const { buttons } = useMightyMouse();

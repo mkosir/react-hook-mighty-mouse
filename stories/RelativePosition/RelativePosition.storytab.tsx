@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePosition.scss';
+import './RelativePosition.storytab.scss';
 
 const RelativePosition = () => {
   const {

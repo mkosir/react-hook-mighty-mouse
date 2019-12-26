@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './EyesFollowTired';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './EyesFollowTired.storytab';
 
-const jsx = `import React, { useState } from 'react';
+const code = `import React, { useState } from 'react';
 
 import useMightyMouse from '../../src';
 import './EyesFollowTired.scss';
@@ -23,7 +23,8 @@ const EyesFollowTired = () => {
 
   const redEye =
     (angleLeftEye < 30 || (angleLeftEye < 360 && angleLeftEye > 330)) &&
-    (angleRightEye > 150 && angleRightEye < 210);
+    angleRightEye > 150 &&
+    angleRightEye < 210;
   const styleLeftEye = {
     transform: \`rotate(\${-angleLeftEye}deg)\`,
     backgroundColor: redEye ? '#f8c6c6' : '#f3efef',
@@ -63,9 +64,10 @@ const EyesFollowTired = () => {
   );
 };
 
-export default EyesFollowTired;`;
+export default EyesFollowTired;
+`;
 
-const scss = `.eyes-follow-tired {
+const style = `.eyes-follow-tired {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -145,12 +147,13 @@ const scss = `.eyes-follow-tired {
       transform: scale(1.3);
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _EyesFollowTired = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _EyesFollowTired;

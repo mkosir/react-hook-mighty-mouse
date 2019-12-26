@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './MouseHover';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './MouseHover.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './MouseHover.scss';
@@ -24,9 +24,10 @@ const MouseHover = () => {
   );
 };
 
-export default MouseHover;`;
+export default MouseHover;
+`;
 
-const scss = `.mouse-hover {
+const style = `.mouse-hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,12 +54,13 @@ const scss = `.mouse-hover {
       color: rgb(236, 189, 59);
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _MouseHover = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _MouseHover;

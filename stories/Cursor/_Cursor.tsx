@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './Cursor';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './Cursor.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './Cursor.scss';
@@ -23,9 +23,10 @@ const Cursor = () => {
   );
 };
 
-export default Cursor;`;
+export default Cursor;
+`;
 
-const scss = `.cursor {
+const style = `.cursor {
   .cheese {
     cursor: none;
     width: 200px;
@@ -40,12 +41,13 @@ const scss = `.cursor {
     display: none;
     pointer-events: none;
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _Cursor = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _Cursor;

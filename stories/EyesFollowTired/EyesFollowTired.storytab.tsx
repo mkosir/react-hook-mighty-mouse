@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import useMightyMouse from '../../src';
-import './EyesFollowTired.scss';
+import './EyesFollowTired.storytab.scss';
 
 const EyesFollowTired = () => {
   const [tiredness, setTiredness] = useState(0);
@@ -18,7 +18,8 @@ const EyesFollowTired = () => {
 
   const redEye =
     (angleLeftEye < 30 || (angleLeftEye < 360 && angleLeftEye > 330)) &&
-    (angleRightEye > 150 && angleRightEye < 210);
+    angleRightEye > 150 &&
+    angleRightEye < 210;
   const styleLeftEye = {
     transform: `rotate(${-angleLeftEye}deg)`,
     backgroundColor: redEye ? '#f8c6c6' : '#f3efef',

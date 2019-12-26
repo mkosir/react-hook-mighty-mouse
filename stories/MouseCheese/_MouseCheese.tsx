@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './MouseCheese';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './MouseCheese.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './MouseCheese.scss';
@@ -101,9 +101,10 @@ const MouseCheese = () => {
   );
 };
 
-export default MouseCheese;`;
+export default MouseCheese;
+`;
 
-const scss = `.mouse-cheese {
+const style = `.mouse-cheese {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -296,12 +297,13 @@ const scss = `.mouse-cheese {
       }
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _MouseCheese = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _MouseCheese;

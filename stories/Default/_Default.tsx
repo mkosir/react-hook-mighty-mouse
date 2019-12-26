@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './Default';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './Default.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './Default.scss';
@@ -16,18 +16,19 @@ const Default = () => {
     <div className="default">
       Mouse position
       <div className="row">
-        x: <div>{client.x}</div>
+        x: <div>{client.x && client.x.toFixed(0)}</div>
       </div>
       <div className="row">
-        y: <div>{client.y}</div>
+        y: <div>{client.y && client.y.toFixed(0)}</div>
       </div>
     </div>
   );
 };
 
-export default Default;`;
+export default Default;
+`;
 
-const scss = `.default {
+const style = `.default {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,12 +47,13 @@ const scss = `.default {
     margin-top: 10px;
     min-width: 50px;
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _Default = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _Default;

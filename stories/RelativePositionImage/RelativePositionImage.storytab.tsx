@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePositionImage.scss';
+import './RelativePositionImage.storytab.scss';
 import imgCheese from './img/cheese.png';
 
 const RelativePositionImage = () => {

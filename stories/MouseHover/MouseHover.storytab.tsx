@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './MouseHover.scss';
+import './MouseHover.storytab.scss';
 import imgCheese from './img/cheese.png';
 
 const MouseHover = () => {

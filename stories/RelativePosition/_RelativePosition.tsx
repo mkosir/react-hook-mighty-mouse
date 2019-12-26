@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './RelativePosition';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './RelativePosition.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './RelativePosition.scss';
@@ -39,9 +39,10 @@ const RelativePosition = () => {
   );
 };
 
-export default RelativePosition;`;
+export default RelativePosition;
+`;
 
-const scss = `.relative-position {
+const style = `.relative-position {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,12 +76,13 @@ const scss = `.relative-position {
       min-width: 60px;
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _RelativePosition = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _RelativePosition;

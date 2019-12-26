@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './Buttons';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './Buttons.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './Buttons.scss';
@@ -25,9 +25,10 @@ const Buttons = () => {
   );
 };
 
-export default Buttons;`;
+export default Buttons;
+`;
 
-const scss = `.buttons {
+const style = `.buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,12 +53,13 @@ const scss = `.buttons {
       line-height: 10px;
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _Buttons = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _Buttons;

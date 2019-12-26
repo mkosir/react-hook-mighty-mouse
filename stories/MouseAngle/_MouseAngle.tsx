@@ -1,9 +1,9 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './MouseAngle';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './MouseAngle.storytab';
 
-const jsx = `import React from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './MouseAngle.scss';
@@ -26,9 +26,10 @@ const MouseAngle = () => {
   );
 };
 
-export default MouseAngle;`;
+export default MouseAngle;
+`;
 
-const scss = `.mouse-angle {
+const style = `.mouse-angle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,12 +66,13 @@ const scss = `.mouse-angle {
       min-width: 60px;
     }
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _MouseAngle = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _MouseAngle;

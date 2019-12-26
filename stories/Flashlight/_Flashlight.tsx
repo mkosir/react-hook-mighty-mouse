@@ -1,28 +1,23 @@
 import React from 'react';
 
-import StorybookTabComponent from '../_StorybookTabComponent/StorybookTabComponent';
-import Demo from './Flashlight';
+import StoryTabTemplate from 'story-tab-template-react';
+import Demo from './Flashlight.storytab';
 
-const jsx = `import React, { useRef } from 'react';
+const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
 import './Flashlight.scss';
 import imgFlashlight from './img/flashlight.png';
 
 const Flashlight = () => {
-  let toggleFlashlight = useRef(true);
-
   const {
     position: {
       page: { x, y },
     },
-    eventType,
   } = useMightyMouse();
-  if (eventType === 'mousedown') {
-    toggleFlashlight.current = !toggleFlashlight.current;
-  }
+
   const style = {
-    backgroundImage: toggleFlashlight.current ? \`url(\${imgFlashlight})\` : null,
+    backgroundImage: x && y ? \`url(\${imgFlashlight})\` : null,
     backgroundPositionX: x - 200,
     backgroundPositionY: y - 350,
   };
@@ -40,9 +35,10 @@ const Flashlight = () => {
   );
 };
 
-export default Flashlight;`;
+export default Flashlight;
+`;
 
-const scss = `.flashlight {
+const style = `.flashlight {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,12 +62,13 @@ const scss = `.flashlight {
     font-size: 0.8em;
     font-style: italic;
   }
-}`;
+}
+`;
 
-const StorybookTabs = () => (
-  <StorybookTabComponent jsx={jsx} scss={scss}>
+const _Flashlight = () => (
+  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StorybookTabComponent>
+  </StoryTabTemplate>
 );
 
-export default StorybookTabs;
+export default _Flashlight;
