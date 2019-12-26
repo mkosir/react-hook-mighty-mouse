@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-template-react';
+import StoryTabTemplate from 'story-tab-react';
 import Demo from './Buttons.storytab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Buttons.scss';
+import './Buttons.storytab.scss';
 
 const Buttons = () => {
   const { buttons } = useMightyMouse();

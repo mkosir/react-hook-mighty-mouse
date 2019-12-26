@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-template-react';
+import StoryTabTemplate from 'story-tab-react';
 import Demo from './EyesFollowTired.storytab';
 
 const code = `import React, { useState } from 'react';
 
 import useMightyMouse from '../../src';
-import './EyesFollowTired.scss';
+import './EyesFollowTired.storytab.scss';
 
 const EyesFollowTired = () => {
   const [tiredness, setTiredness] = useState(0);

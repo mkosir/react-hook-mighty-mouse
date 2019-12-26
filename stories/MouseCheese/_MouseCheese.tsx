@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-template-react';
+import StoryTabTemplate from 'story-tab-react';
 import Demo from './MouseCheese.storytab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './MouseCheese.scss';
+import './MouseCheese.storytab.scss';
 import imgCheese from './img/cheese.png';
 
 const MouseCheese = () => {

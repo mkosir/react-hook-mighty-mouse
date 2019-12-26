@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-template-react';
+import StoryTabTemplate from 'story-tab-react';
 import Demo from './RelativePosition.storytab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePosition.scss';
+import './RelativePosition.storytab.scss';
 
 const RelativePosition = () => {
   const {

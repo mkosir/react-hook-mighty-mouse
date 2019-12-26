@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-template-react';
+import StoryTabTemplate from 'story-tab-react';
 import Demo from './EyesFollow.storytab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './EyesFollow.scss';
+import './EyesFollow.storytab.scss';
 
 const EyesFollow = () => {
   const {

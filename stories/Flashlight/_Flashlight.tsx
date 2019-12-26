@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-template-react';
+import StoryTabTemplate from 'story-tab-react';
 import Demo from './Flashlight.storytab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Flashlight.scss';
+import './Flashlight.storytab.scss';
 import imgFlashlight from './img/flashlight.png';
 
 const Flashlight = () => {

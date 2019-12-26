@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-template-react';
+import StoryTabTemplate from 'story-tab-react';
 import Demo from './RelativePositionImage.storytab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePositionImage.scss';
+import './RelativePositionImage.storytab.scss';
 import imgCheese from './img/cheese.png';
 
 const RelativePositionImage = () => {
