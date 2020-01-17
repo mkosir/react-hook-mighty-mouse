@@ -10,7 +10,7 @@ _React hook that tracks mouse events on selected element._
 
 ## Demo
 
-**[Live demo & Code examples](https://mkosir.github.io/react-hook-mighty-mouse)** created with [StoryTab 📑](https://github.com/mkosir/story-tab)
+**[Live demo & Code examples](https://mkosir.github.io/react-hook-mighty-mouse)** created with [React DocTab 📑](https://github.com/mkosir/react-doc-tab)
 
 ## Install
 
