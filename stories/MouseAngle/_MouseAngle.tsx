@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './MouseAngle.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './MouseAngle.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './MouseAngle.storytab.scss';
+import './MouseAngle.doctab.scss';
 
 const MouseAngle = () => {
   const {
@@ -70,9 +70,9 @@ const style = `.mouse-angle {
 `;
 
 const _MouseAngle = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _MouseAngle;

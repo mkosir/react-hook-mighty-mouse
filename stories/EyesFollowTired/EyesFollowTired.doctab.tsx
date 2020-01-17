@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import useMightyMouse from '../../src';
-import './EyesFollowTired.storytab.scss';
+import './EyesFollowTired.doctab.scss';
 
 const EyesFollowTired = () => {
   const [tiredness, setTiredness] = useState(0);

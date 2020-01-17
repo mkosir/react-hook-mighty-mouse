@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './MouseHover.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './MouseHover.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './MouseHover.storytab.scss';
+import './MouseHover.doctab.scss';
 import imgCheese from './img/cheese.png';
 
 const MouseHover = () => {
@@ -58,9 +58,9 @@ const style = `.mouse-hover {
 `;
 
 const _MouseHover = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _MouseHover;

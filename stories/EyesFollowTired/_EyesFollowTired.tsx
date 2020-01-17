@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './EyesFollowTired.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './EyesFollowTired.doctab';
 
 const code = `import React, { useState } from 'react';
 
 import useMightyMouse from '../../src';
-import './EyesFollowTired.storytab.scss';
+import './EyesFollowTired.doctab.scss';
 
 const EyesFollowTired = () => {
   const [tiredness, setTiredness] = useState(0);
@@ -151,9 +151,9 @@ const style = `.eyes-follow-tired {
 `;
 
 const _EyesFollowTired = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _EyesFollowTired;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Default.storytab.scss';
+import './Default.doctab.scss';
 
 const Default = () => {
   const {

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './Flashlight.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './Flashlight.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Flashlight.storytab.scss';
+import './Flashlight.doctab.scss';
 import imgFlashlight from './img/flashlight.png';
 
 const Flashlight = () => {
@@ -66,9 +66,9 @@ const style = `.flashlight {
 `;
 
 const _Flashlight = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _Flashlight;

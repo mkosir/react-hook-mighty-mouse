@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './EyesFollow.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './EyesFollow.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './EyesFollow.storytab.scss';
+import './EyesFollow.doctab.scss';
 
 const EyesFollow = () => {
   const {
@@ -75,9 +75,9 @@ const style = `.eyes-follow {
 `;
 
 const _EyesFollow = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _EyesFollow;

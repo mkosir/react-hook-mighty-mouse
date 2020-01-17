@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './Cursor.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './Cursor.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Cursor.storytab.scss';
+import './Cursor.doctab.scss';
 import imgCheese from './img/cheese.png';
 
 const Cursor = () => {
@@ -45,9 +45,9 @@ const style = `.cursor {
 `;
 
 const _Cursor = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _Cursor;

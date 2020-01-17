@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './RelativePositionImage.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './RelativePositionImage.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePositionImage.storytab.scss';
+import './RelativePositionImage.doctab.scss';
 import imgCheese from './img/cheese.png';
 
 const RelativePositionImage = () => {
@@ -73,9 +73,9 @@ const style = `.relative-position-image {
 `;
 
 const _RelativePositionImage = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _RelativePositionImage;

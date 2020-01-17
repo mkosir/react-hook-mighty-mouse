@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './Buttons.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './Buttons.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Buttons.storytab.scss';
+import './Buttons.doctab.scss';
 
 const Buttons = () => {
   const { buttons } = useMightyMouse();
@@ -57,9 +57,9 @@ const style = `.buttons {
 `;
 
 const _Buttons = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _Buttons;

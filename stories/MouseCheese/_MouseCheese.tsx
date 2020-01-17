@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './MouseCheese.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './MouseCheese.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './MouseCheese.storytab.scss';
+import './MouseCheese.doctab.scss';
 import imgCheese from './img/cheese.png';
 
 const MouseCheese = () => {
@@ -301,9 +301,9 @@ const style = `.mouse-cheese {
 `;
 
 const _MouseCheese = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _MouseCheese;

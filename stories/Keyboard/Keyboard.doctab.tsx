@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Keyboard.storytab.scss';
+import './Keyboard.doctab.scss';
 
 const Keyboard = () => {
   const { keyboard } = useMightyMouse();

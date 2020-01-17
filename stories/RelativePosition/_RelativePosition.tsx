@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './RelativePosition.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './RelativePosition.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePosition.storytab.scss';
+import './RelativePosition.doctab.scss';
 
 const RelativePosition = () => {
   const {
@@ -80,9 +80,9 @@ const style = `.relative-position {
 `;
 
 const _RelativePosition = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _RelativePosition;

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import StoryTabTemplate from 'story-tab-react';
-import Demo from './Positions.storytab';
+import DocTabTemplate from 'react-doc-tab-template';
+import Demo from './Positions.doctab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Positions.storytab.scss';
+import './Positions.doctab.scss';
 
 const Positions = () => {
   const {
@@ -82,9 +82,9 @@ const style = `.positions {
 `;
 
 const _Positions = () => (
-  <StoryTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </StoryTabTemplate>
+  </DocTabTemplate>
 );
 
 export default _Positions;
