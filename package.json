@@ -1,6 +1,6 @@
 {
   "name": "react-hook-mighty-mouse",
-  "version": "1.4.29",
+  "version": "1.4.30",
   "description": "React mouse hook",
   "main": "./dist/react-hook-mighty-mouse.umd.js",
   "module": "./dist/react-hook-mighty-mouse.es5.js",
@@ -18,7 +18,7 @@
     "prettier": "prettier --config .prettierrc --write {src,stories}/**/*.ts{,x}",
     "storybook": "start-storybook -p 9009 -s public --quiet",
     "storybook:build": "build-storybook -c .storybook -o build_storybook --quiet",
-    "doctab": "doctab generate --prefix=_ && npm run prettier",
+    "demotab": "demotab generate --prefix=_ && npm run prettier",
     "validate": "npm run lint && npm run lint-prettier && npm run build"
   },
   "devDependencies": {
@@ -44,8 +44,8 @@
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "react": "^16.10.2",
-    "react-doc-tab": "^1.0.22",
-    "react-doc-tab-template": "^1.0.12",
+    "react-demo-tab": "^1.2.1",
+    "react-demo-tab-cli": "^1.2.1",
     "react-dom": "^16.10.2",
     "rimraf": "^3.0.0",
     "rollup": "^1.29.0",
@@ -87,6 +87,7 @@
   "keywords": [
     "react",
     "hook",
+    "react-hook",
     "mighty",
     "mighty-mouse",
     "mouse",
