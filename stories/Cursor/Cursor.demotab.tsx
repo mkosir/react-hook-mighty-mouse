@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Cursor.doctab.scss';
+import './Cursor.demotab.scss';
 import imgCheese from './img/cheese.png';
 
 const Cursor = () => {

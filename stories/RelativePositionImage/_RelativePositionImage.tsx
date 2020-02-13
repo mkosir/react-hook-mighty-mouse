@@ -1,12 +1,12 @@
 import React from 'react';
 
-import DocTabTemplate from 'react-doc-tab-template';
-import Demo from './RelativePositionImage.doctab';
+import DemoTab from 'react-demo-tab';
+import Demo from './RelativePositionImage.demotab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './RelativePositionImage.doctab.scss';
+import './RelativePositionImage.demotab.scss';
 import imgCheese from './img/cheese.png';
 
 const RelativePositionImage = () => {
@@ -73,9 +73,9 @@ const style = `.relative-position-image {
 `;
 
 const _RelativePositionImage = () => (
-  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DemoTab code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </DocTabTemplate>
+  </DemoTab>
 );
 
 export default _RelativePositionImage;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Positions.doctab.scss';
+import './Positions.demotab.scss';
 
 const Positions = () => {
   const {

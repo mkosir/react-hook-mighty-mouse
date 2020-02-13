@@ -1,12 +1,12 @@
 import React from 'react';
 
-import DocTabTemplate from 'react-doc-tab-template';
-import Demo from './Default.doctab';
+import DemoTab from 'react-demo-tab';
+import Demo from './Default.demotab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Default.doctab.scss';
+import './Default.demotab.scss';
 
 const Default = () => {
   const {
@@ -51,9 +51,9 @@ const style = `.default {
 `;
 
 const _Default = () => (
-  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DemoTab code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </DocTabTemplate>
+  </DemoTab>
 );
 
 export default _Default;

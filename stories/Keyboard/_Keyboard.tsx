@@ -1,12 +1,12 @@
 import React from 'react';
 
-import DocTabTemplate from 'react-doc-tab-template';
-import Demo from './Keyboard.doctab';
+import DemoTab from 'react-demo-tab';
+import Demo from './Keyboard.demotab';
 
 const code = `import React from 'react';
 
 import useMightyMouse from '../../src';
-import './Keyboard.doctab.scss';
+import './Keyboard.demotab.scss';
 
 const Keyboard = () => {
   const { keyboard } = useMightyMouse();
@@ -55,9 +55,9 @@ const style = `.keyboard {
 `;
 
 const _Keyboard = () => (
-  <DocTabTemplate code={code} style={style} codeExt="tsx" styleExt="scss">
+  <DemoTab code={code} style={style} codeExt="tsx" styleExt="scss">
     <Demo />
-  </DocTabTemplate>
+  </DemoTab>
 );
 
 export default _Keyboard;

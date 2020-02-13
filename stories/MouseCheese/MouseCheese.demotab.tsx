@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useMightyMouse from '../../src';
-import './MouseCheese.doctab.scss';
+import './MouseCheese.demotab.scss';
 import imgCheese from './img/cheese.png';
 
 const MouseCheese = () => {
