@@ -14,8 +14,7 @@ _React hook that tracks mouse events on selected element._
 
 ## Install
 
-npm `npm install react-hook-mighty-mouse`  
-yarn `yarn add react-hook-mighty-mouse`
+`npm install react-hook-mighty-mouse`
 
 ## Features
 
